@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: "/webmardi.ch",
   siteMetadata: {
     title: `Webmardi`,
     author: `@webmardi`,
