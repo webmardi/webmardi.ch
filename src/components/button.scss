@@ -1,0 +1,14 @@
+.btn {
+  display: inline-block;
+  padding: 15px 35px;
+  background-color: var(--color-secondary);
+  color: var(--color-main);
+  border-radius: 3px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn-lg {
+  padding: 30px 70px;
+  font-size: var(--font-size-lg);
+}

@@ -1,21 +1,73 @@
 import React from "react"
-import { Link } from "gatsby"
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import Layout from "../components/Layout"
+import SEO from "../components/Seo"
+import NextSession from "../components/NextSession"
+import { graphql } from "gatsby"
+import Slider from "../components/Slider"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+const IndexPage = props => {
+    const {edges: sessions} = props.data.allMarkdownRemark;
+    return (
+      <Layout>
+          <SEO title="Home"/>
+          <NextSession session={sessions[0].node}/>
+          <div className="grid-layout container">
+              <h2 className="display-1 mb-0">Who are we?</h2>
+              <p className="lead mb-0">{props.data.site.siteMetadata.description}</p>
+          </div>
+          <Slider images={props.data.allFile.edges}/>
+      </Layout>
+    )
+}
+
+export const query = graphql`  
+    query FirstFeatured {
+        site {
+            siteMetadata {
+                description
+            }
+        }
+        allMarkdownRemark(
+            filter: { 
+                frontmatter: { featured: {eq: true} } 
+            }, 
+            sort: {
+                fields: frontmatter___date, 
+                order: DESC
+            },
+            limit:1
+        ) {
+            edges {
+                node {
+                    id
+                    frontmatter {
+                        title
+                        date(formatString: "DD MMMM YYYY")
+                        time: date(formatString: "HH:mm")
+                        htmlDate: date(formatString: "YYYY-MM-DDTHH:mm")
+                        speaker
+                        job
+                        location
+                        url
+                    }
+                }
+            }
+        }
+        allFile(filter: {relativeDirectory: {eq: "images-slider"}, extension: {regex: "/jpe?g/"}}) {
+            edges {
+                node {
+                    id
+                    base
+                    childImageSharp {
+                        fluid {
+                            ...GatsbyImageSharpFluid_tracedSVG
+                        }
+                    }
+                }
+            }
+        }
+    }
+`
 
 export default IndexPage
