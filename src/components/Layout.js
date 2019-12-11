@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./Header"
-import 'normalize.css/normalize.css';
+import "normalize.css/normalize.css"
 import "./layout.scss"
 
 const Layout = ({ children }) => {
@@ -36,8 +36,12 @@ const Layout = ({ children }) => {
             <div>Antistatique</div>
           </div>
           <div className="footer-copy">
-            <small className="text-secondary">Copyright © {new Date().getFullYear()}</small>
-            <small className="text-secondary">Dev with love in Switzerland</small>
+            <small className="text-secondary">
+              Copyright © {new Date().getFullYear()}
+            </small>
+            <small className="text-secondary">
+              Dev with love in Switzerland
+            </small>
           </div>
         </div>
       </footer>

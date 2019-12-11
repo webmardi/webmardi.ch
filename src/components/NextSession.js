@@ -1,9 +1,18 @@
 import React from "react"
 import Button from "./Button"
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types"
 
-const NextSession = ({session}) => {
-  const {title, date, htmlDate, time, location, speaker, job, url} = session.frontmatter;
+const NextSession = ({ session }) => {
+  const {
+    title,
+    date,
+    htmlDate,
+    time,
+    location,
+    speaker,
+    job,
+    url,
+  } = session.frontmatter
   return (
     <div className="bg-main">
       <div className="container grid-layout">
@@ -14,23 +23,30 @@ const NextSession = ({session}) => {
           </Button>
         </div>
         <div className="bg-main grid-session">
-          <p style={{gridColumn: 'date', lineHeight: 1}}>
-            <time className="text-secondary lead font-weight-bold" dateTime={htmlDate}>{date}</time>
+          <p style={{ gridColumn: "date", lineHeight: 1 }}>
+            <time
+              className="text-secondary lead font-weight-bold"
+              dateTime={htmlDate}
+            >
+              {date}
+            </time>
           </p>
-          <h2 className="display-1" style={{gridColumn: 'title'}}>{title}</h2>
-          <div className="font-weight-medium" style={{gridColumn: 'speaker'}}>
+          <h2 className="display-1" style={{ gridColumn: "title" }}>
+            {title}
+          </h2>
+          <div className="font-weight-medium" style={{ gridColumn: "speaker" }}>
             <p>
               <span className="text-secondary">{speaker}</span>
-              <br/>
+              <br />
               {job}
             </p>
           </div>
-          <div className="font-weight-medium" style={{gridColumn: 'time'}}>
+          <div className="font-weight-medium" style={{ gridColumn: "time" }}>
             <p>
               <span className="text-secondary">
                 <time dateTime={time}>{time}</time>
               </span>
-              <br/>
+              <br />
               {location}
             </p>
           </div>
@@ -56,4 +72,4 @@ NextSession.propTypes = {
   }).isRequired,
 }
 
-export default NextSession;
+export default NextSession
