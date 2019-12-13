@@ -65,7 +65,7 @@ body {
 .grid-layout {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  grid-gap: 0 calc(#{var(--spacer)} / 2);
+  grid-gap: 0 var(--spacer);
   padding: 5rem 0 4rem;
 
   @media screen and (max-width: 800px) {
@@ -167,12 +167,16 @@ small {
 // Header component
 .header {
   padding-top: 40px;
-  padding-bottom: 1vw;
 
   .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+
+    > * {
+      margin-bottom: 2rem;
+    }
   }
 }
 
@@ -185,6 +189,10 @@ small {
 
     &:hover {
       --color-white: var(--color-white-hover);
+    }
+
+    &:first-child {
+      margin-left: 0;
     }
   }
 }
@@ -215,6 +223,10 @@ small {
       @media (prefers-reduced-motion: reduce) {
         animation: none;
       }
+
+      > * {
+        padding: 0 var(--container-spacer);
+      }
     }
   }
 }
@@ -243,6 +255,7 @@ small {
     padding: 0 calc(#{var(--spacer)} / 2);
     scroll-snap-align: start;
     scroll-margin-left: calc(3.5vw - #{var(--spacer)} / 2);
+    max-width: 80vw;
 
     &:first-child {
       padding-left: 3.5vw;
@@ -254,6 +267,7 @@ small {
   }
 
   .gatsby-image-wrapper {
-    width: 415px;
+    width: 80vw;
+    max-width: 415px;
   }
 }
