@@ -32,7 +32,9 @@ const Header = ({ siteTitle }) => (
   <header className="header bg-main">
     <div className="container">
       <h1 className="sr-only">{siteTitle}</h1>
-      <Webmardi />
+      <a href="/" style={{lineHeight: 0}}>
+        <Webmardi />
+      </a>
       <div className="header-socials">
         {socials.map((social, i) => (
           <a

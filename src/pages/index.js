@@ -49,19 +49,13 @@ export const query = graphql`
         }
       }
     }
-    allFile(
-      filter: {
-        relativeDirectory: { eq: "images-slider" }
-        extension: { regex: "/jpe?g/" }
-      }
-    ) {
+    allFile( filter: { relativeDirectory: { eq: "images-slider" } } ) {
       edges {
         node {
           id
-          base
           childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid_tracedSVG
+              fluid(maxHeight: 415, maxWidth: 415) {
+              ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
           }
         }

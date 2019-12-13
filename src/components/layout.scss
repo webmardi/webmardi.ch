@@ -14,6 +14,13 @@
   --spacer: 25px;
   --font-size-lg: 1.6818181818rem;
   --font-size-xl: 3.6363636364rem;
+
+  --container-spacer: 3.5vw;
+}
+
+::selection {
+  background-color: var(--color-main);
+  color: var(--color-white);
 }
 
 html {
@@ -49,6 +56,10 @@ body {
 .bg-main {
   background-color: var(--color-main);
   color: var(--color-white);
+
+  ::selection {
+    background-color: var(--color-secondary);
+  }
 }
 
 .grid-layout {
@@ -110,6 +121,10 @@ a {
   transition: color 0.2s ease-out;
 }
 
+small {
+  font-size: 72%;
+}
+
 .text-secondary {
   color: var(--color-secondary);
 }
@@ -146,7 +161,7 @@ a {
 
 // Layout
 .container {
-  margin: 0 3.5vw;
+  margin: 0 var(--container-spacer);
 }
 
 // Header component
@@ -184,9 +199,29 @@ a {
 
   .sponsors {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 4rem;
+    overflow-x: hidden;
+    width: 100vw;
+    height: 100px;
+    margin: 0 calc(#{var(--container-spacer)} * -1) 6rem;
+
+    .track {
+      display: flex;
+      flex: 1 0 100%;
+      justify-content: space-around;
+      align-items: center;
+      will-change: transform;
+      animation: marquee 30s linear infinite;
+
+      @media (prefers-reduced-motion: reduce) {
+        animation: none;
+      }
+    }
   }
+}
+
+@keyframes marquee {
+  from {transform: translateX(0%);}
+  to {transform: translateX(-100%);}
 }
 
 .footer-copy {
@@ -216,10 +251,9 @@ a {
     &:last-child {
       padding-right: 3.5vw;
     }
+  }
 
-    img {
-      display: block;
-      max-width: calc(100vw - var(--spacer) * 2.5);
-    }
+  .gatsby-image-wrapper {
+    width: 415px;
   }
 }
