@@ -21,6 +21,8 @@ url: http://example.com
 Optional description, you can use **Markdown** here.
 ```
 
+⚠ The homepage will always display the **first featured** session, ordering by date DESC.
+
 ## 🚚 Setup
 
 ```bash
