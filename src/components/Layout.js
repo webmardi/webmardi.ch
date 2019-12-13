@@ -69,10 +69,10 @@ const Layout = ({ children }) => {
           </div>
           <div className="footer-copy">
             <small className="text-secondary">
-              Copyright © {new Date().getFullYear()}
+              <a href="http://www.nerval.ch/" target="_blank">Pierre</a> & <a href="https://toni.dev" target="_blank">Toni</a>
             </small>
             <small className="text-secondary">
-              Dev with love in Switzerland
+              © Webmardi {new Date().getFullYear()}
             </small>
           </div>
         </div>

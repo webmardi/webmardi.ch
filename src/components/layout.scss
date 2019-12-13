@@ -240,6 +240,15 @@ small {
   display: flex;
   justify-content: space-between;
   margin-top: 2rem;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 // Slider component
