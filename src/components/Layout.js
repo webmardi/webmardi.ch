@@ -69,7 +69,7 @@ const Layout = ({ children }) => {
           </div>
           <div className="footer-copy">
             <small className="text-secondary">
-              <a href="http://www.nerval.ch/" target="_blank">Pierre</a> & <a href="https://toni.dev" target="_blank">Toni</a>
+              <a href="http://www.nerval.ch/" target="_blank" rel="noopener noreferrer">Pierre</a> & <a href="https://toni.dev" target="_blank" rel="noopener noreferrer">Toni</a>
             </small>
             <small className="text-secondary">
               © Webmardi {new Date().getFullYear()}

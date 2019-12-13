@@ -12,13 +12,14 @@ const NextSession = ({ session }) => {
     speaker,
     job,
     url,
-  } = session.frontmatter
+  } = session.frontmatter;
+
   return (
     <div className="bg-main">
       <div className="container grid-layout">
         <div className="cta">
           <Button className="btn-lg" href={url}>
-            S'inscrire
+            Register
             <span className="sr-only">{title}</span>
           </Button>
         </div>
@@ -34,6 +35,11 @@ const NextSession = ({ session }) => {
           <h2 className="display-1" style={{ gridColumn: "title" }}>
             {title}
           </h2>
+
+          {session.html && (
+            <div style={{ gridColumn: "body" }} dangerouslySetInnerHTML={{__html: session.html}}/>
+          )}
+
           <div className="font-weight-medium" style={{ gridColumn: "speaker" }}>
             <p>
               <span className="text-secondary">{speaker}</span>

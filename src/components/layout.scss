@@ -87,6 +87,7 @@ body {
   grid-template:
     "date date" auto
     "title title" auto
+    "body body" auto
     "speaker time" auto
     / 1fr 1fr;
   grid-gap: 0 calc(#{var(--spacer)} / 2);
@@ -95,6 +96,7 @@ body {
     grid-template:
       "date date" auto
       "title title" auto
+      "body body" auto
       "speaker speaker" auto
       "time time" auto
       / 1fr 1fr;
