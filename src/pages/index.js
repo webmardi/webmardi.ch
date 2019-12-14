@@ -11,12 +11,19 @@ const IndexPage = props => {
   return (
     <Layout>
       <SEO title="Home" />
+
       <NextSession session={sessions[0].node} />
-      <div className="grid-layout container">
-        <h2 className="display-1 mb-0">Who are we?</h2>
-        <p className="lead mb-0">{props.data.site.siteMetadata.description}</p>
+
+      <div className="bg-white">
+
+        <div className="grid-layout container">
+          <h2 className="display-1 mb-0">Who are we?</h2>
+          <p className="lead mb-0">{props.data.site.siteMetadata.description}</p>
+        </div>
+
+        <Slider images={props.data.allFile.edges} />
+
       </div>
-      <Slider images={props.data.allFile.edges} />
     </Layout>
   )
 }

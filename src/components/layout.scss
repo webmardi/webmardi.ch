@@ -42,7 +42,8 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: var(--color-main);
+  color: var(--color-white);
+  background-color: var(--color-main);
 }
 
 .main-wrapper {
@@ -53,9 +54,9 @@ body {
 }
 
 // Block helpers
-.bg-main {
-  background-color: var(--color-main);
-  color: var(--color-white);
+.bg-white {
+  background-color: var(--color-white);
+  color: var(--color-main);
 
   ::selection {
     background-color: var(--color-secondary);
@@ -241,6 +242,7 @@ small {
 .footer-copy {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   margin-top: 2rem;
 
   a {
@@ -256,7 +258,7 @@ small {
 // Slider component
 .slider {
   display: flex;
-  margin-bottom: var(--spacer);
+  padding-bottom: var(--spacer);
   max-width: 100vw;
   overflow-x: scroll;
   scroll-snap-type: x mandatory;

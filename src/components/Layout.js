@@ -28,7 +28,7 @@ const Layout = ({ children }) => {
     <div className="main-wrapper">
       <Header siteTitle={data.site.siteMetadata.title} />
       <main>{children}</main>
-      <footer className="footer bg-main">
+      <footer className="footer">
         <div className="container">
           <h2 className="text-secondary font-weight-medium">Our amazing sponsors</h2>
           <div className="sponsors">

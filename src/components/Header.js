@@ -29,7 +29,7 @@ const socials = [
 ]
 
 const Header = ({ siteTitle }) => (
-  <header className="header bg-main">
+  <header className="header">
     <div className="container">
       <h1 className="sr-only">{siteTitle}</h1>
       <a href="/" style={{lineHeight: 0}}>

@@ -15,7 +15,7 @@ const NextSession = ({ session }) => {
   } = session.frontmatter;
 
   return (
-    <div className="bg-main">
+    <div>
       <div className="container grid-layout">
         <div className="cta">
           <Button className="btn-lg" href={url}>
@@ -23,7 +23,7 @@ const NextSession = ({ session }) => {
             <span className="sr-only">{title}</span>
           </Button>
         </div>
-        <div className="bg-main grid-session">
+        <div className="grid-session">
           <p style={{ gridColumn: "date", lineHeight: 1 }}>
             <time
               className="text-secondary lead font-weight-bold"
