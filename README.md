@@ -4,6 +4,8 @@ This is a [Gatsby](https://www.gatsbyjs.org/) project intended to show next Webm
 
 ## ✏️ Content edition
 
+### 🎤 Sessions
+
 To add a new session, simply add a new Mardown file in the `/data/sessions` directory. Follow the pattern `YYYYMMDD-name-of-session.md` when naming your file to keep things organized.
 
 The session file must be set up with some frontmatter:
@@ -22,6 +24,18 @@ Optional description, you can use **Markdown** here.
 ```
 
 ⚠ The homepage will always display the **first featured** session, ordering by date DESC.
+
+### 💰 Sponsors
+
+The sponsors are simple SVG components in the `src/svg/sponsors` directory. Follow the syntax of the existing ones to add a new one. 
+
+You may need to adapt `src/components/Layout.js` if you have more than two sponsors.
+
+### 🖼 Pictures
+
+To add new pictures, simply add them in the `src/images/images-slider` directory. The directory needs to have at least one image.
+
+Image must be at least 830x830px. They can be a lot bigger though, they will get resized as needed.
 
 ## 🚚 Setup
 
