@@ -55,4 +55,6 @@ yarn develop
 
 The website is now running at [http://localhost:8000](http://localhost:8000). You can also browse GraphiQL at [http://localhost:8000/___graphql](http://localhost:8000/___graphql).
 
-## Deployment
+## 🚀 Deployment
+
+Github action will deploy to the Github `gh-page` which is reachable on [https://webmardi.github.io/webmardi.ch](https://webmardi.github.io/webmardi.ch) on every push into **master**.
