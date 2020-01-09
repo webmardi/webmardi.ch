@@ -50,7 +50,7 @@ const Layout = ({ children }) => {
               <a href="http://www.nerval.ch/" target="_blank" rel="noopener noreferrer">Pierre</a> & <a href="https://toni.dev" target="_blank" rel="noopener noreferrer">Toni</a>
             </small>
             <small className="text-secondary">
-              <a href="mailto:hello@webmardi.ch">hello@webmardi.ch</a>
+              <a href="mailto:contact@webmardi.ch">contact@webmardi.ch</a>
             </small>
             <small className="text-secondary">
               © Webmardi {new Date().getFullYear()}
