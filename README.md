@@ -1,5 +1,7 @@
 # Webmardi website
 
+![Gatsby Publish](https://github.com/webmardi/webmardi.ch/workflows/Gatsby%20Publish/badge.svg?branch=master)
+
 This is a [Gatsby](https://www.gatsbyjs.org/) project intended to show next Webmardi sessions and all supporting sponsors/partners.
 
 ## ✏️ Content edition
