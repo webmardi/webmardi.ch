@@ -1,6 +1,6 @@
 ---
 featured: true
-title: Tackling complex domains: strategies and patterns
+title: Tackling complex domains - strategies and patterns
 speaker: Romaric Drigon
 job: Software engineer at ASIT
 date: 2020-08-04 19:00
