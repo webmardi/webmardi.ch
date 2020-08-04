@@ -5,5 +5,5 @@ speaker: Baptiste Leduc
 job: Web Consultant at Jolicode
 date: 2020-01-08 19:00
 location: Online, Youtube
-url:
+url: https://www.meetup.com/webmardi/events/272322643/
 ---
