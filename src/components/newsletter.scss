@@ -1,0 +1,34 @@
+.newsletter {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.newsletter form input[type=email] {
+  outline: medium none;
+  border: medium none;
+  padding: 10px;
+  border-radius: 3px;
+}
+.newsletter form input[type=submit] {
+  outline: none;
+  border: none;
+  padding: 10px;
+  border-radius: 3px;
+  color: #fff;
+  background: #34495e;
+  cursor: pointer;
+  margin-left: 10px;
+
+  &:hover {
+    background: #233140;
+    -webkit-transition: all .6s ease 0;
+    -moz-transition: all .6s ease;
+    -ms-transition: all .6s ease 0;
+    -o-transition: all .6s ease 0;
+    transition: all .6s ease 0;
+  }
+}
+
+.d-none {
+  display: none;
+}
