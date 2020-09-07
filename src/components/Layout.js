@@ -10,6 +10,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./Header"
+import NewsletterForm from "./NewsletterForm"
 import "normalize.css/normalize.css"
 import "./layout.scss"
 
@@ -45,6 +46,8 @@ const Layout = ({ children }) => {
               </div>
             ))}
           </div>
+          <h2 className="text-secondary font-weight-medium">Subscribe our newsletter</h2>
+          <NewsletterForm />
           <div className="footer-copy">
             <small className="text-secondary">
               <a href="http://www.nerval.ch/" target="_blank" rel="noopener noreferrer">Pierre</a> & <a href="https://toni.dev" target="_blank" rel="noopener noreferrer">Toni</a>
