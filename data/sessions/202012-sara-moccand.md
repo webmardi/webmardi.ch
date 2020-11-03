@@ -1,6 +1,6 @@
 ---
 featured: true
-title: Myths & true stories about JavaScript for SEO
+title: Myths and true stories about JavaScript for SEO
 speaker: Sara Moccand-Sayegh
 job: SEO specialist at Liip
 date: 2020-12-08 19:00
