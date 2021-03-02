@@ -1,6 +1,6 @@
 ---
 featured: true
-title: "Développeur junior : les bonnes questions à se poser avant de rejoindre une équipe !"
+title: "Les bonnes questions à se poser avant de rejoindre une équipe !"
 speaker: Anthony Maison
 job: Associate Director at Jolicode 
 date: 2021-04-06 19:00
