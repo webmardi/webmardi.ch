@@ -1,6 +1,6 @@
 ---
 featured: true
-title: #117 - PostGraphile
+title: "#117 - PostGraphile"
 speaker: Pierre Spring
 job: TBD
 date: 2021-12-07 19:00
