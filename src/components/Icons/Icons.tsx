@@ -1,12 +1,31 @@
 import React, { FunctionComponent, SVGAttributes } from 'react';
 
-import Home from 'assets/icons/home.svg';
+import Design from 'assets/icons/design.svg';
+import Facebook from 'assets/icons/facebook.svg';
+import Instagram from 'assets/icons/instagram.svg';
+import Special from 'assets/icons/special.svg';
+import Technical from 'assets/icons/technical.svg';
+import Twitter from 'assets/icons/twitter.svg';
+import Youtube from 'assets/icons/youtube.svg';
 
 export const iconList: Record<string, unknown> = {
-  home: Home,
+  youtube: Youtube,
+  twitter: Twitter,
+  technical: Technical,
+  special: Special,
+  instagram: Instagram,
+  facebook: Facebook,
+  design: Design,
 };
 
-export type IconNames = 'home'; // | 'something' | 'else' ...
+export type IconNames =
+  | 'youtube'
+  | 'twitter'
+  | 'technical'
+  | 'special'
+  | 'instagram'
+  | 'facebook'
+  | 'design';
 
 const Icons = (): JSX.Element => (
   <div style={{ display: 'none' }}>

@@ -11,7 +11,7 @@ export type Props = {
   className?: string;
 };
 
-const Icon = ({ name = 'home', className }: Props): JSX.Element => (
+const Icon = ({ name = 'instagram', className }: Props): JSX.Element => (
   <svg css={styles} className={className} aria-hidden="true">
     <use xlinkHref={`#${name}`} />
   </svg>
