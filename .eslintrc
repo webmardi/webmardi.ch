@@ -1,0 +1,24 @@
+{
+  "extends": "../.eslintrc",
+  "parserOptions": {
+    "project": "./playground/tsconfig.eslint.json"
+  },
+  "rules": {
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "packageDir": ["./", "./playground/"]
+      }
+    ]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": [
+          "./playground/src",
+          "./src"
+        ]
+      }
+    }
+  }
+}
