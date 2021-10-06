@@ -10,7 +10,7 @@ type Props = {
 
 const Layout = ({ children }: Props): JSX.Element => (
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  <div>
+  <div tw="font-sans antialiased text-blue">
     <Icons />
     {children}
   </div>
@@ -21,7 +21,7 @@ Layout.defaultProps = {};
 export const LayoutDecorator = (Story: FunctionComponent): JSX.Element => (
   <>
     <GlobalStyles />
-    <div tw="font-sans antialiased text-gray-900">
+    <div tw="font-sans antialiased text-blue">
       <Story />
     </div>
   </>

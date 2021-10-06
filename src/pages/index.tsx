@@ -6,7 +6,7 @@ import Layout from 'components/Layout';
 
 const Home = (): JSX.Element => (
   <Layout>
-    <h1>Hello</h1>
+    <h1 tw="text-6xl font-bold text-center">Events</h1>
   </Layout>
 );
 
