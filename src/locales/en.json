@@ -2,5 +2,11 @@
   "header": {
     "logo": "Webmardi logotype",
     "follow_us": "Don’t be shy, follow us"
+  },
+  "hero": {
+    "register": "Register"
+  },
+  "homepage": {
+    "title": "Webmardi"
   }
 }

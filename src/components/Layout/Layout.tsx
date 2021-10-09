@@ -11,7 +11,7 @@ type Props = {
 
 const Layout = ({ children }: Props): JSX.Element => (
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  <div tw="font-sans antialiased text-blue">
+  <div tw="font-sans text-sm antialiased font-medium md:text-base text-blue">
     <Icons />
     <Header />
     {children}

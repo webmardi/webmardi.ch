@@ -4,6 +4,7 @@ import { jsx } from '@emotion/react';
 import { GetStaticProps } from 'next';
 import tw from 'twin.macro';
 
+import Hero from 'components/Hero';
 import Layout from 'components/Layout';
 import { Event } from 'types';
 import { getEvents } from 'utils';
@@ -18,7 +19,8 @@ const Home = ({ events }: Props): JSX.Element => {
 
   return (
     <Layout>
-      <h1 tw="text-2xl font-bold text-center">{t('title')}</h1>
+      <h1 tw="sr-only">{t('homepage.title')}</h1>
+      <Hero events={events} />
     </Layout>
   );
 };

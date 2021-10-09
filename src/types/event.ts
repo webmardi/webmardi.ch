@@ -1,10 +1,10 @@
 export type Event = {
   title: string | null;
-  date: Date | null;
+  date: string | null;
   type: string[] | null;
-  speaker_name: string | null;
-  speaker_job: string | null;
-  speaker_link: string | null;
+  speakerName: string | null;
+  speakerJob: string | null;
+  speakerLink: string | null;
   location: string | null;
-  subscription_link: string | null;
+  subscriptionLink: string | null;
 };

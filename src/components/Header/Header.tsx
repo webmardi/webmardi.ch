@@ -30,12 +30,16 @@ const Header = (): JSX.Element => {
 
   return (
     <header tw="text-white bg-blue">
-      <div tw="py-10 mx-auto border-b max-w-7xl border-blue-lighter">
-        <div tw="flex items-center justify-between">
-          <img src="/vectors/logo.svg" alt={t('header.logo')} />
+      <div tw="px-4 py-4 mx-auto border-b md:py-10 max-w-7xl border-blue-lighter">
+        <div tw="items-center justify-between md:flex space-y-4 md:space-y-0">
+          <img
+            src="/vectors/logo.svg"
+            alt={t('header.logo')}
+            tw="w-1/3 md:w-auto"
+          />
           <p tw="flex items-center">
             {t('header.follow_us')}
-            <span tw="pl-8 text-xl space-x-6">
+            <span tw="pl-8 text-lg md:text-xl space-x-4 md:space-x-6">
               {socials.map(({ url, icon }) => (
                 <a
                   href={url}
@@ -45,6 +49,7 @@ const Header = (): JSX.Element => {
                   tw="inline-block focus:text-cyan transition-colors hover:motion-safe:animate-bounce"
                 >
                   <Icon name={icon} />
+                  <span tw="sr-only">{icon}</span>
                 </a>
               ))}
             </span>
