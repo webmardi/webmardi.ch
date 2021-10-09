@@ -18,6 +18,4 @@ const Blank = ({ name }: Props): JSX.Element => {
   );
 };
 
-Blank.defaultProps = {};
-
 export default Blank;
