@@ -5,6 +5,7 @@ import { closestIndexTo, isAfter, parseISO } from 'date-fns';
 import { isNil } from 'ramda';
 import tw from 'twin.macro';
 
+import Button from 'components/Button';
 import { Event } from 'types';
 import { formatDate } from 'utils';
 
@@ -32,7 +33,11 @@ const Hero = ({ events }: Props): JSX.Element => {
   const date = !isNil(rawDate) ? parseISO(rawDate) : '';
 
   return (
-    <div tw="text-white bg-blue" itemScope itemType="https://schema.org/Event">
+    <section
+      tw="text-white bg-blue"
+      itemScope
+      itemType="https://schema.org/Event"
+    >
       <div tw="px-4 py-10 mx-auto border-b md:py-28 max-w-7xl border-blue-lighter grid md:grid-cols-3 gap-12 md:gap-6">
         <div tw="col-span-2">
           {!isNil(title) && (
@@ -41,15 +46,19 @@ const Hero = ({ events }: Props): JSX.Element => {
             </h2>
           )}
           {!isNil(subscriptionLink) && (
-            <a
-              href={subscriptionLink}
-              target="_blank"
-              rel="noreferrer"
-              tw="inline-block px-4 py-2 mt-8 text-lg font-bold border-none lg:text-xl lg:px-8 lg:py-3 hover:bg-white lg:mt-14 bg-cyan text-blue transition-colors focus:text-blue-dark hover:text-blue-lighter"
-              itemProp="url"
-            >
-              {t('hero.register')}
-            </a>
+            <div tw="mt-8 lg:mt-14">
+              <Button
+                as="a"
+                target="_blank"
+                rel="noreferrer"
+                href={subscriptionLink}
+                itemProp="url"
+                size="lg"
+                scheme="cyan"
+              >
+                {t('hero.register')}
+              </Button>
+            </div>
           )}
         </div>
         <div tw="md:order-first">
@@ -89,7 +98,7 @@ const Hero = ({ events }: Props): JSX.Element => {
           )}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

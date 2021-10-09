@@ -7,6 +7,11 @@
     "register": "Register"
   },
   "homepage": {
-    "title": "Webmardi"
+    "title": "Webmardi",
+    "about": {
+      "title": "Who we are?",
+      "content": "Webmardi is a Swiss-based association that organises free monthly events in western Switzerland. We offer the opportunity for people to meet their local community and bring together developers, designers, project owners, founders & many more.",
+      "follow_us": "Follow us"
+    }
   }
 }
