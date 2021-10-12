@@ -80,22 +80,26 @@ const Hero = ({ events }: Props): JSX.Element => {
               {formatDate(date, 'HH:mm')}
             </time>
           )}
-          {!isNil(location) && <p>{location}</p>}
-          {!isNil(speakerName) && (
-            <p
-              tw="mt-10 text-lg font-bold md:text-xl text-cyan"
-              itemScope
-              itemProp="performer"
-              itemType="https://schema.org/Person"
-            >
-              <span itemProp="name">{speakerName}</span>
-            </p>
-          )}
-          {!isNil(speakerJob) && (
-            <p tw="mt-2" itemProp="location">
-              {speakerJob}
-            </p>
-          )}
+          {!isNil(location) && <p itemProp="location">{location}</p>}
+          <div
+            itemScope
+            itemProp="performer"
+            itemType="https://schema.org/Person"
+          >
+            {!isNil(speakerName) && (
+              <p
+                tw="mt-10 text-lg font-bold md:text-xl text-cyan"
+                itemProp="name"
+              >
+                {speakerName}
+              </p>
+            )}
+            {!isNil(speakerJob) && (
+              <p itemProp="jobTitle" tw="mt-2">
+                {speakerJob}
+              </p>
+            )}
+          </div>
         </div>
       </div>
     </section>

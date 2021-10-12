@@ -2,8 +2,9 @@ import React, { FunctionComponent, SVGAttributes } from 'react';
 
 import Design from 'assets/icons/design.svg';
 import Facebook from 'assets/icons/facebook.svg';
+import ForEveryone from 'assets/icons/for_everyone.svg';
 import Instagram from 'assets/icons/instagram.svg';
-import Special from 'assets/icons/special.svg';
+import SpecialEvent from 'assets/icons/special_event.svg';
 import Technical from 'assets/icons/technical.svg';
 import Twitter from 'assets/icons/twitter.svg';
 import Youtube from 'assets/icons/youtube.svg';
@@ -12,7 +13,8 @@ export const iconList: Record<string, unknown> = {
   youtube: Youtube,
   twitter: Twitter,
   technical: Technical,
-  special: Special,
+  special_event: SpecialEvent,
+  for_everyone: ForEveryone,
   instagram: Instagram,
   facebook: Facebook,
   design: Design,
@@ -22,7 +24,8 @@ export type IconNames =
   | 'youtube'
   | 'twitter'
   | 'technical'
-  | 'special'
+  | 'special_event'
+  | 'for_everyone'
   | 'instagram'
   | 'facebook'
   | 'design';
@@ -34,7 +37,7 @@ const Icons = (): JSX.Element => (
         iconList[icon] as FunctionComponent,
         {
           key: icon,
-          id: icon.replace(/_/gm, '-'),
+          id: icon,
         }
       )
     )}

@@ -73,6 +73,10 @@ module.exports = {
         },
       ],
     },
+    underlineOffset: {
+      small: '1px',
+      medium: '3px',
+    },
     extend: {
       animation: {
         'bounce': 'bounce 0.5s infinite',
@@ -85,4 +89,10 @@ module.exports = {
       }
     }
   },
+  variants: {
+    underlineColors: ['hover', 'focus', 'active'],
+  },
+  plugins: [
+    require('tailwind-underline-utils')
+  ]
 };

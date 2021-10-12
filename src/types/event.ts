@@ -1,7 +1,7 @@
 export type Event = {
   title: string | null;
   date: string | null;
-  type: string[] | null;
+  types: string[] | null;
   speakerName: string | null;
   speakerJob: string | null;
   speakerLink: string | null;

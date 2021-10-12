@@ -25,7 +25,7 @@ type Parent = {
 
 type Properties = {
   speaker_link: Link;
-  type: Type;
+  types: Types;
   subscription_link: Link;
   speaker_job: Location;
   date: PropertiesDate;
@@ -92,7 +92,7 @@ type Link = {
   url: null | string;
 };
 
-type Type = {
+type Types = {
   id: string;
   type: string;
   multi_select: MultiSelect[];

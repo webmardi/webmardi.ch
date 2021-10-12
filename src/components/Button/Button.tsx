@@ -40,6 +40,8 @@ const Button = React.forwardRef(
           tw`border border-blue hover:bg-blue hover:text-white focus:bg-blue-dark focus:text-white`,
         scheme === 'cyan' &&
           tw`hover:bg-white bg-cyan text-blue focus:text-blue-dark hover:text-blue-lighter`,
+        scheme === 'blue' &&
+          tw`hover:bg-cyan focus:bg-cyan bg-blue text-white focus:text-blue-dark hover:text-blue`,
       ]}
       {...props}
     >
