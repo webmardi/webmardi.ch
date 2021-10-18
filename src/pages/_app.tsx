@@ -6,6 +6,8 @@ import { GlobalStyles } from 'twin.macro';
 
 import 'locales/i18n';
 
+import 'assets/css/fonts.css';
+
 const App = ({ Component, pageProps }: AppProps): JSX.Element => {
   const { locale } = useRouter();
 

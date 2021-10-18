@@ -11,7 +11,7 @@ type Props = {
 };
 
 // const host = 'https://webmardi.ch';
-const host = 'http://localhost';
+const host = 'http://4d7d6aoaeg.preview.infomaniak.website';
 
 const SEO = ({ title, imageUrl, description }: Props): JSX.Element => {
   const { asPath } = useRouter();
@@ -65,17 +65,6 @@ const SEO = ({ title, imageUrl, description }: Props): JSX.Element => {
         <meta name="msapplication-TileColor" content="#2525a5" />
         <meta name="msapplication-config" content="/browserconfig.xml" />
         <meta name="theme-color" content="#ffffff" />
-
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="true"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap"
-          rel="stylesheet"
-        />
       </Head>
     </>
   );

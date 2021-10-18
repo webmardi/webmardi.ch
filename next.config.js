@@ -20,4 +20,5 @@ module.exports = withOffline({
     return config;
   },
   env: {},
+  compress: true,
 });
