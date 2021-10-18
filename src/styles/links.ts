@@ -3,6 +3,6 @@ import tw from 'twin.macro';
 
 export const linksWrapper = css`
   a {
-    ${tw`underline hover:underline-blue-DEFAULT underline-offset-small hover:bg-blue hover:text-white hover:no-underline transition-colors`}
+    ${tw`underline md:hover:underline-blue-DEFAULT underline-offset-small md:hover:bg-blue md:hover:text-white md:hover:no-underline transition-colors`}
   }
 `;

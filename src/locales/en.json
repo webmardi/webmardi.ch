@@ -54,5 +54,9 @@
       "contact_us": "Contact us",
       "contact_us_link": "mailto:hello@example.org"
     }
+  },
+  "seo": {
+    "title": "Webmardi - Monthly events in western Switzerland",
+    "description": "Webmardi is a Swiss-based association that organises free monthly events in western Switzerland."
   }
 }

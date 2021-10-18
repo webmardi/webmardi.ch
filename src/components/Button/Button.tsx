@@ -37,11 +37,11 @@ const Button = React.forwardRef(
         size === 'lg' && tw`px-4 py-2 lg:px-8 lg:py-3 lg:text-xl text-lg`,
         size === 'base' && tw`px-4 py-2`,
         scheme === 'outline' &&
-          tw`border border-blue hover:bg-blue hover:text-white focus:bg-blue-dark focus:text-white`,
+          tw`border border-blue md:hover:bg-blue md:hover:text-white focus:bg-blue-dark focus:text-white bg-white`,
         scheme === 'cyan' &&
-          tw`hover:bg-white bg-cyan text-blue focus:text-blue-dark hover:text-blue-lighter`,
+          tw`border border-cyan md:hover:border-blue md:hover:bg-white bg-cyan text-blue focus:text-blue-dark md:hover:text-blue-lighter`,
         scheme === 'blue' &&
-          tw`hover:bg-cyan focus:bg-cyan bg-blue text-white focus:text-blue-dark hover:text-blue`,
+          tw`border border-blue md:hover:border-cyan md:hover:bg-cyan focus:bg-cyan bg-blue text-white focus:text-blue-dark md:hover:text-blue`,
       ]}
       {...props}
     >

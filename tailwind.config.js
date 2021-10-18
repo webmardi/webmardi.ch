@@ -93,6 +93,7 @@ module.exports = {
     underlineColors: ['hover', 'focus', 'active'],
   },
   plugins: [
+    require('@tailwindcss/forms'),
     require('tailwind-underline-utils')
   ]
 };

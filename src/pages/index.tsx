@@ -7,9 +7,12 @@ import { isNil } from 'ramda';
 import tw from 'twin.macro';
 
 import Button from 'components/Button';
+import Carousel from 'components/Carousel';
 import EventTeaser from 'components/EventTeaser';
 import Hero from 'components/Hero';
 import Layout from 'components/Layout';
+import SEO from 'components/SEO';
+import Sponsors from 'components/Sponsors';
 import { linksWrapper } from 'styles';
 import { Event } from 'types';
 import { getEvents } from 'utils';
@@ -37,30 +40,37 @@ const Home = ({ events }: Props): JSX.Element => {
 
   return (
     <Layout>
+      <SEO />
       <h1 tw="sr-only">{t('homepage.title')}</h1>
 
       <Hero events={events} />
 
       <main tw="px-4 mx-auto mb-20 max-w-7xl">
-        <section tw="mt-12 md:mt-28 md:grid grid-cols-2 gap-6">
-          <h2
-            tw="text-xl font-bold col-span-2 md:text-xl lg:text-2xl"
-            itemProp="name"
-          >
-            {t('homepage.about.title')}
-          </h2>
-          <p tw="mt-2">{t('homepage.about.content')}</p>
-          <div tw="mt-6 md:text-right md:mt-0">
-            <Button
-              as="a"
-              target="_blank"
-              rel="noreferrer"
-              href={t('homepage.about.instagram_link')}
-              itemProp="url"
-              iconRight="instagram"
+        <section>
+          <div tw="mt-12 md:mt-28 md:grid grid-cols-2 gap-6">
+            <h2
+              tw="text-xl font-bold col-span-2 md:text-xl lg:text-2xl"
+              itemProp="name"
             >
-              {t('homepage.about.follow_us')}
-            </Button>
+              {t('homepage.about.title')}
+            </h2>
+            <p tw="mt-2">{t('homepage.about.content')}</p>
+            <div tw="mt-6 md:text-right md:mt-0">
+              <Button
+                as="a"
+                target="_blank"
+                rel="noreferrer"
+                href={t('homepage.about.instagram_link')}
+                itemProp="url"
+                iconRight="instagram"
+              >
+                {t('homepage.about.follow_us')}
+              </Button>
+            </div>
+          </div>
+
+          <div tw="mt-14">
+            <Carousel />
           </div>
         </section>
 
@@ -118,6 +128,8 @@ const Home = ({ events }: Props): JSX.Element => {
           )}
         </section>
       </main>
+
+      <Sponsors />
     </Layout>
   );
 };

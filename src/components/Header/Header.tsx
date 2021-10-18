@@ -36,6 +36,8 @@ const Header = (): JSX.Element => {
             src="/vectors/logo.svg"
             alt={t('header.logo')}
             tw="w-1/3 md:w-auto"
+            width="207"
+            height="33"
           />
           <p tw="flex items-center">
             {t('header.follow_us')}
@@ -46,7 +48,7 @@ const Header = (): JSX.Element => {
                   key={icon}
                   target="_blank"
                   rel="noreferrer"
-                  tw="inline-block focus:text-cyan transition-colors hover:motion-safe:animate-bounce"
+                  tw="inline-block focus:text-cyan transition-colors md:hover:motion-safe:animate-bounce"
                 >
                   <Icon name={icon} />
                   <span tw="sr-only">{icon}</span>

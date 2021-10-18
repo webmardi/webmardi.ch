@@ -2,6 +2,7 @@ import React, { FunctionComponent } from 'react';
 import { jsx } from '@emotion/react';
 import tw, { GlobalStyles } from 'twin.macro';
 
+import Footer from 'components/Footer';
 import Header from 'components/Header';
 import Icons from 'components/Icons';
 
@@ -11,10 +12,11 @@ type Props = {
 
 const Layout = ({ children }: Props): JSX.Element => (
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  <div tw="font-sans text-sm antialiased font-medium md:text-base text-blue">
+  <div tw="overflow-x-hidden font-sans text-sm antialiased font-medium md:text-base text-blue">
     <Icons />
     <Header />
     {children}
+    <Footer />
   </div>
 );
 Layout.defaultProps = {};

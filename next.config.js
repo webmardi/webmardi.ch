@@ -1,6 +1,7 @@
 const path = require('path');
+const withOffline = require('next-offline');
 
-module.exports = {
+module.exports = withOffline({
   webpack(config) {
     config.resolve = {
       ...config.resolve,
@@ -19,4 +20,4 @@ module.exports = {
     return config;
   },
   env: {},
-};
+});
