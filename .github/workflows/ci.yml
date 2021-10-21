@@ -3,8 +3,7 @@ name: Deploy
 on:
   push:
     branches:
-      - main
-      - dev
+      - next-revamp
   repository_dispatch:
     types:
       - webhook
