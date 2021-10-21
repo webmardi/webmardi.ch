@@ -1,11 +1,11 @@
 name: Deploy
 
 on:
+  repository_dispatch:
+    types: [trigger_deploy]
   push:
     branches:
       - next-revamp
-  repository_dispatch:
-    types: [trigger_deploy]
 
 jobs:
   deploy:
