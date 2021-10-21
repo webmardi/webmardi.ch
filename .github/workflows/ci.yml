@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - next-revamp
-  repository_dispatch:
-    types:
-      - webhook
 
 jobs:
   deploy:
