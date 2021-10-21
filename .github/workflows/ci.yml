@@ -5,7 +5,7 @@ on:
     branches:
       - next-revamp
   repository_dispatch:
-    types: deploy
+    types: [trigger_deploy]
 
 jobs:
   deploy:
