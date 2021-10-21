@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { jsx } from '@emotion/react';
+import { isAfter, isBefore, parseISO } from 'date-fns';
 import { isNil } from 'ramda';
 import tw from 'twin.macro';
 
@@ -63,49 +64,92 @@ const EventTeaser = ({ event }: Props): JSX.Element => {
           </p>
         )}
       </div>
-      <div
-        itemScope
-        itemProp="performer"
-        itemType="https://schema.org/Person"
-        tw="sm:col-span-8 lg:col-span-3"
-        css={linksWrapper}
-      >
-        {!isNil(event.speakerName) && isNil(event.speakerLink) && (
-          <p tw="text-sm" itemProp="name">
-            {event.speakerName}
-          </p>
-        )}
-        {!isNil(event.speakerName) && !isNil(event.speakerLink) && (
-          <a
-            href={event.speakerLink}
-            target="_blank"
-            tw="text-sm"
-            itemProp="name"
-            rel="noreferrer"
-          >
-            {event.speakerName}
-          </a>
-        )}
-        {!isNil(event.speakerJob) && (
-          <p itemProp="jobTitle" tw="mt-1 text-sm">
-            {event.speakerJob}
-          </p>
-        )}
-      </div>
-      {!isNil(event.subscriptionLink) && (
-        <div tw="flex items-center sm:justify-end sm:col-span-4 lg:col-span-2">
-          <Button
-            as="a"
-            target="_blank"
-            rel="noreferrer"
-            href={event.subscriptionLink}
-            itemProp="url"
-            scheme="blue"
-          >
-            {t('hero.register')}
-          </Button>
+      {isNil(event.applyLink) && (
+        <div
+          itemScope
+          itemProp="performer"
+          itemType="https://schema.org/Person"
+          tw="sm:col-span-8 lg:col-span-3"
+          css={linksWrapper}
+        >
+          {!isNil(event.speakerName) && isNil(event.speakerLink) && (
+            <p tw="text-sm" itemProp="name">
+              {event.speakerName}
+            </p>
+          )}
+          {!isNil(event.speakerName) && !isNil(event.speakerLink) && (
+            <a
+              href={event.speakerLink}
+              target="_blank"
+              tw="text-sm"
+              itemProp="name"
+              rel="noreferrer"
+            >
+              {event.speakerName}
+            </a>
+          )}
+          {!isNil(event.speakerJob) && (
+            <p itemProp="jobTitle" tw="mt-1 text-sm">
+              {event.speakerJob}
+            </p>
+          )}
         </div>
       )}
+      {!isNil(event.applyLink) && (
+        <p tw="text-sm sm:col-span-8 lg:col-span-3">
+          {t('homepage.events.apply_desc')}
+        </p>
+      )}
+      {!isNil(event.subscriptionLink) &&
+        isNil(event.applyLink) &&
+        !isNil(event.date) &&
+        isAfter(parseISO(event.date), new Date()) && (
+          <div tw="flex items-center sm:justify-end sm:col-span-4 lg:col-span-2">
+            <Button
+              as="a"
+              target="_blank"
+              rel="noreferrer"
+              href={event.subscriptionLink}
+              itemProp="url"
+              scheme="blue"
+            >
+              {t('homepage.events.subscribe')}
+            </Button>
+          </div>
+        )}
+      {!isNil(event.applyLink) &&
+        !isNil(event.date) &&
+        isAfter(parseISO(event.date), new Date()) && (
+          <div tw="flex items-center sm:justify-end sm:col-span-4 lg:col-span-2">
+            <Button
+              as="a"
+              target="_blank"
+              rel="noreferrer"
+              href={event.applyLink}
+              itemProp="url"
+              scheme="blue"
+            >
+              {t('homepage.events.apply')}
+            </Button>
+          </div>
+        )}
+      {!isNil(event.youtubeLink) &&
+        !isNil(event.date) &&
+        isBefore(parseISO(event.date), new Date()) && (
+          <div tw="flex items-center sm:justify-end sm:col-span-4 lg:col-span-2">
+            <Button
+              as="a"
+              target="_blank"
+              rel="noreferrer"
+              href={event.youtubeLink}
+              itemProp="url"
+              scheme="outline"
+              iconRight="youtube"
+            >
+              {t('homepage.events.replay')}
+            </Button>
+          </div>
+        )}
     </li>
   );
 };

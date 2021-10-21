@@ -7,4 +7,6 @@ export type Event = {
   speakerLink: string | null;
   location: string | null;
   subscriptionLink: string | null;
+  applyLink: string | null;
+  youtubeLink: string | null;
 };

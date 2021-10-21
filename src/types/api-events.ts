@@ -27,6 +27,8 @@ type Properties = {
   speaker_link: Link;
   types: Types;
   subscription_link: Link;
+  youtube_link: Link;
+  apply_link: Link;
   speaker_job: Location;
   date: PropertiesDate;
   published: Published;

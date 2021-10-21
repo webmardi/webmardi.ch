@@ -10,6 +10,8 @@ const sanitizeEvents = (results: ApiEvents['results']): Event[] =>
     speakerLink: properties.speaker_link.url ?? null,
     location: properties.location.rich_text[0]?.plain_text ?? null,
     subscriptionLink: properties.subscription_link.url ?? null,
+    applyLink: properties.apply_link.url ?? null,
+    youtubeLink: properties.youtube_link.url ?? null,
   }));
 
 export default sanitizeEvents;
