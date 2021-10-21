@@ -14,9 +14,9 @@
       "title": "Be a speaker",
       "info": "Let your voice be heard at our events and beyond.",
       "contact_us": "Contact us",
-      "contact_us_link": "mailto:hello@example.org",
+      "contact_us_link": "mailto:contact@webmardi.ch",
       "submit_paper": "Submit your paper",
-      "submit_paper_link": "mailto:hello@example.org"
+      "submit_paper_link": "mailto:contact@webmardi.ch"
     },
     "made_by": "Dev by <a href=\"https://yago.io/\" target=\"_blank\" rel=\"noreferrer\">Yago</a> & Design by <a href=\"http://www.nerval.ch/\" target=\"_blank\" rel=\"noreferrer\">Pierre</a>"
   },
@@ -33,7 +33,7 @@
     },
     "events": {
       "title": "Events",
-      "content": "Let us know if you would like to <a href=\"#\">speak at webmardi</a> or a topic you would like <a href=\"#\">hear about</a>.",
+      "content": "Let us know if you would like to <a href=\"mailto:contact@webmardi.ch\">speak at webmardi</a> or a topic you would like <a href=\"mailto:contact@webmardi.ch\">hear about</a>.",
       "view_on_meetup": "View on Meetup",
       "meetup_link": "https://www.meetup.com/webmardi/",
       "upcoming": "Upcoming",
@@ -55,7 +55,7 @@
       "content": "Thanks to our sponsors who help making these events happening and offering you beers.",
       "support_us": "Do you wish to support us ?",
       "contact_us": "Contact us",
-      "contact_us_link": "mailto:hello@example.org"
+      "contact_us_link": "mailto:contact@webmardi.ch"
     }
   },
   "seo": {

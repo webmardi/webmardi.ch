@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - next-revamp
+  repository_dispatch:
+    types: deploy
 
 jobs:
   deploy:
