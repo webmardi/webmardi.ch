@@ -1,8 +1,8 @@
 name: Deploy
 
 on:
-  repository_dispatch:
-    types: [trigger_deploy]
+  schedule:
+    - cron:  '* 0 * * *'
   push:
     branches:
       - next-revamp
