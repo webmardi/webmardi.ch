@@ -22,6 +22,8 @@ const Hero = ({ events }: Props): JSX.Element => {
     new Date(),
     futureEvents.map(i => parseISO(i.date ?? ''))
   );
+  if (isNil(futureEvents[nextEventId])) return <span />; // Just in case...
+
   const {
     title,
     date: rawDate,

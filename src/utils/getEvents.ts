@@ -18,7 +18,7 @@ const getEvents = async (cursor?: string): Promise<Event[]> => {
           Authorization: `Bearer ${process.env.NEXT_PUBLIC_TOKEN}`,
         },
         data: {
-          page_size: 1,
+          page_size: 100,
           start_cursor: cursor,
           sorts: [{ property: 'date', direction: 'descending' }],
           filter: { property: 'published', checkbox: { equals: true } },

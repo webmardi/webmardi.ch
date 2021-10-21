@@ -23,7 +23,7 @@ type Props = {
 
 const Home = ({ events }: Props): JSX.Element => {
   const { t } = useTranslation();
-  const [viewMore, setViewMore] = useState(false);
+  const [viewMore, setViewMore] = useState(2);
 
   const futureEvents = events
     .filter(i => !isNil(i.date) && isAfter(parseISO(i.date), new Date()))
@@ -35,8 +35,7 @@ const Home = ({ events }: Props): JSX.Element => {
     .filter(i => !isNil(i.date) && isBefore(parseISO(i.date), new Date()))
     .sort((a, b) =>
       isAfter(parseISO(b.date ?? ''), parseISO(a.date ?? '')) ? 1 : -1
-    )
-    .slice(0, viewMore ? Infinity : 1);
+    );
 
   return (
     <Layout>
@@ -116,13 +115,13 @@ const Home = ({ events }: Props): JSX.Element => {
           </h3>
 
           <ul>
-            {pastEvents.map(event => (
+            {pastEvents.slice(0, viewMore).map(event => (
               <EventTeaser event={event} key={`event-teaser-${event.title}`} />
             ))}
           </ul>
 
-          {!viewMore && (
-            <Button tw="mt-8" onClick={() => setViewMore(true)}>
+          {viewMore <= pastEvents.length && (
+            <Button tw="mt-8" onClick={() => setViewMore(viewMore + 5)}>
               {t('homepage.events.view_more')}
             </Button>
           )}
