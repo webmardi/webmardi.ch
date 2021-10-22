@@ -39,9 +39,9 @@ const Header = (): JSX.Element => {
             width="207"
             height="33"
           />
-          <p tw="flex items-center">
+          <p tw="flex flex-col sm:flex-row sm:items-center">
             {t('header.follow_us')}
-            <span tw="pl-8 text-lg md:text-xl space-x-4 md:space-x-6">
+            <span tw="text-lg sm:pl-8 md:text-xl space-x-4 md:space-x-6">
               {socials.map(({ url, icon }) => (
                 <a
                   href={url}

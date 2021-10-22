@@ -33,7 +33,10 @@ const Footer = (): JSX.Element => {
           </h2>
           <p tw="mt-4 md:mt-7">{t('footer.newsletter.info')}</p>
 
-          <form tw="flex w-full mt-6 lg:mt-16" onSubmit={handleSubscription}>
+          <form
+            tw="w-full mt-6 sm:flex lg:mt-16 space-y-4 sm:space-y-0"
+            onSubmit={handleSubscription}
+          >
             <label htmlFor="email-address" tw="sr-only">
               {t('footer.newsletter.email')}
             </label>
@@ -43,12 +46,12 @@ const Footer = (): JSX.Element => {
               type="email"
               autoComplete="email"
               required
-              tw="w-full px-4 py-2 text-sm md:text-base placeholder-blue border-blue focus:ring-blue-dark focus:border-blue-dark"
+              tw="w-full px-4 py-2 mr-5 text-sm md:text-base placeholder-blue border-blue focus:ring-blue-dark focus:border-blue-dark"
               placeholder={t('footer.newsletter.email')}
               value={email}
               onChange={e => setEmail(e.target.value)}
             />
-            <div tw="flex-shrink-0 ml-5">
+            <div tw="flex-shrink-0">
               <Button type="submit" scheme="blue">
                 {t('footer.newsletter.subscribe')}
               </Button>
@@ -61,14 +64,14 @@ const Footer = (): JSX.Element => {
             {t('footer.speaker.title')}
           </h2>
           <p tw="mt-4 md:mt-7">{t('footer.speaker.info')}</p>
-          <div tw="mt-6 lg:mt-auto space-x-5">
+          <div tw="mt-6 lg:mt-auto space-y-4 sm:space-y-0">
             <Button
               as="a"
               href={t('footer.speaker.contact_us_link')}
               target="_blank"
               rel="noreferrer"
               scheme="outline"
-              tw="xl:px-10"
+              tw="mr-5 xl:px-10"
             >
               {t('footer.speaker.contact_us')}
             </Button>
