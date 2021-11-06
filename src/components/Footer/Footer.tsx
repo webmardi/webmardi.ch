@@ -88,13 +88,14 @@ const Footer = (): JSX.Element => {
         </div>
       </div>
 
-      <address tw="items-center mt-12 text-sm not-italic md:flex md:mt-32">
+      <address tw="items-center justify-between mt-12 text-sm not-italic md:flex md:mt-32">
         <p
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: t('footer.made_by') }}
           css={linksWrapper}
         />
-        <p tw="ml-auto">Webmardi © {formatDate(new Date(), 'yyyy')}</p>
+        <p>hosted by Infomaniak</p>
+        <p>Webmardi © {formatDate(new Date(), 'yyyy')}</p>
       </address>
     </footer>
   );

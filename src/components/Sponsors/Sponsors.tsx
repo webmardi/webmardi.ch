@@ -17,7 +17,7 @@ const Sponsors = (): JSX.Element => {
           <p tw="mt-6">{t('homepage.sponsors.content')}</p>
         </div>
         <div tw="mt-6 md:mt-16 grid md:grid-cols-3 gap-6">
-          <a
+          {/* <a
             href="https://antistatique.net/"
             target="_blank"
             rel="noreferrer"
@@ -30,7 +30,7 @@ const Sponsors = (): JSX.Element => {
               width="235"
               height="42"
             />
-          </a>
+          </a> */}
           <a
             href="https://liip.ch/"
             target="_blank"
@@ -43,6 +43,20 @@ const Sponsors = (): JSX.Element => {
               tw="w-auto"
               width="147"
               height="54"
+            />
+          </a>
+          <a
+            href="https://jolicode.com/"
+            target="_blank"
+            rel="noreferrer"
+            tw="flex items-center justify-center h-40 lg:h-60 bg-blue-dark transition-colors md:hover:bg-blue-light"
+          >
+            <img
+              src="/vectors/jolicode.svg"
+              alt="Jolicode"
+              tw="w-auto"
+              width="248"
+              height="58"
             />
           </a>
           <div tw="flex items-center justify-center h-40 lg:h-60 bg-blue-light">
