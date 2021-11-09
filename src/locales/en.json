@@ -8,7 +8,8 @@
       "title": "Newsletter",
       "info": "Sign up to be informed about upcoming events.",
       "email": "E-mail",
-      "subscribe": "Subscribe"
+      "subscribe": "Subscribe",
+      "success": "Thank you for your subscription ! Don't forget to confirm your Email."
     },
     "speaker": {
       "title": "Be a speaker",

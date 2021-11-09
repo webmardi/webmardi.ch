@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { css, jsx } from '@emotion/react';
 import { isAfter, isBefore, parseISO } from 'date-fns';
+import Interweave from 'interweave';
 import { GetStaticProps } from 'next';
 import { isNil } from 'ramda';
 import tw from 'twin.macro';
@@ -81,10 +82,9 @@ const Home = ({ events }: Props): JSX.Element => {
             >
               {t('homepage.events.title')}
             </h2>
-            <p
+            <Interweave
               tw="mt-2"
-              // eslint-disable-next-line react/no-danger
-              dangerouslySetInnerHTML={{ __html: t('homepage.events.content') }}
+              content={t('homepage.events.content')}
               css={linksWrapper}
             />
             <div tw="mt-6 md:text-right md:mt-0">
