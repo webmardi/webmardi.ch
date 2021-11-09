@@ -76,10 +76,12 @@ const Hero = ({ events }: Props): JSX.Element => {
           {!isNil(date) && (
             <time
               tw="block mt-2"
-              dateTime={formatDate(date, 'HH:mm')}
+              // dateTime={formatDate(date, 'HH:mm')}
+              dateTime="19:00"
               itemProp="startDate"
             >
-              {formatDate(date, 'HH:mm')}
+              {/* {formatDate(date, 'HH:mm')} */}
+              19:00
             </time>
           )}
           {!isNil(location) && <p itemProp="location">{location}</p>}

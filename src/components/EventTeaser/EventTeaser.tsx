@@ -52,10 +52,12 @@ const EventTeaser = ({ event }: Props): JSX.Element => {
         {!isNil(event.date) && (
           <time
             tw="block mt-2 text-sm"
-            dateTime={formatDate(event.date, 'HH:mm')}
+            // dateTime={formatDate(event.date, 'HH:mm')}
+            dateTime="19:00"
             itemProp="startDate"
           >
-            {formatDate(event.date, 'HH:mm')}
+            {/* {formatDate(event.date, 'HH:mm')} */}
+            19:00
           </time>
         )}
         {!isNil(event.location) && (
