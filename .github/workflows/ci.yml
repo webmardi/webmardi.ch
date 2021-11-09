@@ -5,7 +5,7 @@ on:
     - cron: '0 7,12,18 * * 0'
   push:
     branches:
-      - next-revamp
+      - main
 
 jobs:
   deploy:
