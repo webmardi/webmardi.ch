@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { jsx } from '@emotion/react';
 import { isAfter, isBefore, parseISO } from 'date-fns';
-import { isNil } from 'ramda';
+import { isEmpty, isNil } from 'ramda';
 import tw from 'twin.macro';
 
 import Button from 'components/Button';
@@ -103,6 +103,7 @@ const EventTeaser = ({ event }: Props): JSX.Element => {
         </p>
       )}
       {!isNil(event.subscriptionLink) &&
+        !isEmpty(event.subscriptionLink) &&
         isNil(event.applyLink) &&
         !isNil(event.date) &&
         isAfter(parseISO(event.date), new Date()) && (
@@ -120,6 +121,7 @@ const EventTeaser = ({ event }: Props): JSX.Element => {
           </div>
         )}
       {!isNil(event.applyLink) &&
+        !isEmpty(event.applyLink) &&
         !isNil(event.date) &&
         isAfter(parseISO(event.date), new Date()) && (
           <div tw="flex items-center sm:justify-end sm:col-span-4 lg:col-span-2">
@@ -136,6 +138,7 @@ const EventTeaser = ({ event }: Props): JSX.Element => {
           </div>
         )}
       {!isNil(event.youtubeLink) &&
+        !isEmpty(event.youtubeLink) &&
         !isNil(event.date) &&
         isBefore(parseISO(event.date), new Date()) && (
           <div tw="flex items-center sm:justify-end sm:col-span-4 lg:col-span-2">
