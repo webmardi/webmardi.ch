@@ -3,7 +3,9 @@ const withPWA = require('next-pwa')
 
 module.exports = withPWA({
   pwa: {
-    dest: 'public'
+    dest: 'public',
+    runtimeCaching,
+    buildExcludes: [/middleware-manifest.json$/]
   },
   webpack(config) {
     config.resolve = {
