@@ -1,5 +1,6 @@
 const path = require('path');
-const withPWA = require('next-pwa')
+const withPWA = require('next-pwa');
+const runtimeCaching = require("next-pwa/cache");
 
 module.exports = withPWA({
   pwa: {
