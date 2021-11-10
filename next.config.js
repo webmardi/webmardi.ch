@@ -1,7 +1,7 @@
 const path = require('path');
-const withOffline = require('next-offline');
+const withPWA = require('next-pwa')
 
-module.exports = withOffline({
+module.exports = withPWA({
   webpack(config) {
     config.resolve = {
       ...config.resolve,
