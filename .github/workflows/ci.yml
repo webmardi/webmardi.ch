@@ -8,14 +8,10 @@ on:
       - main
   workflow_dispatch:
     inputs:
-      name:
-        description: 'Person to greet'
-        required: true
-        default: 'Mona the Octocat'
-      home:
-        description: 'location'
+      placeholder:
+        description: 'What do you want?'
         required: false
-        default: 'The Octoverse'
+        default: 'Cookies!!!'
 
 jobs:
   deploy:
