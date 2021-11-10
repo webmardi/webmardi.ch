@@ -10,8 +10,7 @@ type Props = {
   description?: string;
 };
 
-// const host = 'https://webmardi.ch';
-const host = 'http://4d7d6aoaeg.preview.infomaniak.website';
+const host = 'https://webmardi.ch';
 
 const SEO = ({ title, imageUrl, description }: Props): JSX.Element => {
   const { asPath } = useRouter();
