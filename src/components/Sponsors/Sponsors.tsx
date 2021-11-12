@@ -32,7 +32,7 @@ const Sponsors = (): JSX.Element => {
             />
           </a>
           <a
-            href="https://jolicode.com/"
+            href="https://jolicode.ch/"
             target="_blank"
             rel="noreferrer"
             tw="flex items-center justify-center h-40 lg:h-60 bg-blue-dark transition-colors md:hover:bg-blue-light"
