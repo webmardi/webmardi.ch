@@ -52,7 +52,7 @@ const Hero = ({ events }: Props): JSX.Element => {
               <Button
                 as="a"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener"
                 href={subscriptionLink}
                 itemProp="url"
                 size="lg"
@@ -76,12 +76,10 @@ const Hero = ({ events }: Props): JSX.Element => {
           {!isNil(date) && (
             <time
               tw="block mt-2"
-              // dateTime={formatDate(date, 'HH:mm')}
-              dateTime="19:00"
+              dateTime={formatDate(date, 'HH:mm')}
               itemProp="startDate"
             >
-              {/* {formatDate(date, 'HH:mm')} */}
-              19:00
+              {formatDate(date, 'HH:mm')}
             </time>
           )}
           {!isNil(location) && <p itemProp="location">{location}</p>}

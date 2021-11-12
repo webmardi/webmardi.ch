@@ -77,7 +77,7 @@ const Footer = (): JSX.Element => {
               as="a"
               href={t('footer.speaker.contact_us_link')}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener"
               scheme="outline"
               tw="mr-5 xl:px-10"
             >
@@ -87,7 +87,7 @@ const Footer = (): JSX.Element => {
               as="a"
               href={t('footer.speaker.submit_paper_link')}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener"
               scheme="cyan"
             >
               {t('footer.speaker.submit_paper')}

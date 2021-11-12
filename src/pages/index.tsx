@@ -59,7 +59,7 @@ const Home = ({ events }: Props): JSX.Element => {
               <Button
                 as="a"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener"
                 href={t('homepage.about.instagram_link')}
                 itemProp="url"
                 iconRight="instagram"
@@ -91,7 +91,7 @@ const Home = ({ events }: Props): JSX.Element => {
               <Button
                 as="a"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener"
                 href={t('homepage.events.meetup_link')}
                 itemProp="url"
               >

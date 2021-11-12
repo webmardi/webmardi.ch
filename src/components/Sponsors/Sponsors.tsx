@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { jsx } from '@emotion/react';
@@ -20,7 +21,7 @@ const Sponsors = (): JSX.Element => {
           <a
             href="https://antistatique.net/"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener"
             tw="flex items-center justify-center h-40 lg:h-60 bg-blue-dark transition-colors md:hover:bg-blue-light"
           >
             <img
@@ -34,7 +35,7 @@ const Sponsors = (): JSX.Element => {
           <a
             href="https://liip.ch/"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener"
             tw="flex items-center justify-center h-40 lg:h-60 bg-blue-dark transition-colors md:hover:bg-blue-light"
           >
             <img
@@ -48,7 +49,7 @@ const Sponsors = (): JSX.Element => {
           {/* <a
             href="https://jolicode.com/"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener"
             tw="flex items-center justify-center h-40 lg:h-60 bg-blue-dark transition-colors md:hover:bg-blue-light"
           >
             <img
@@ -65,7 +66,7 @@ const Sponsors = (): JSX.Element => {
               <Button
                 as="a"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener"
                 href={t('homepage.sponsors.contact_us_link')}
                 itemProp="url"
                 scheme="blue"

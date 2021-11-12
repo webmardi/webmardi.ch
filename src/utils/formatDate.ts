@@ -20,11 +20,8 @@ const formatDateI18n = (
   }
 ): string => {
   const inputDate = type(date) === 'String' ? new Date(date) : (date as Date);
-  const utcTime = new Date(
-    inputDate.getTime() + inputDate.getTimezoneOffset() * 60 * 1000
-  );
 
-  return format(utcTime, frmt, {
+  return format(inputDate, frmt, {
     ...options,
     locale: supportedLocale[i18n.language],
   });

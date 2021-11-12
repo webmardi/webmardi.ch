@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { jsx } from '@emotion/react';
@@ -52,12 +53,10 @@ const EventTeaser = ({ event }: Props): JSX.Element => {
         {!isNil(event.date) && (
           <time
             tw="block mt-2 text-sm"
-            // dateTime={formatDate(event.date, 'HH:mm')}
-            dateTime="19:00"
+            dateTime={formatDate(event.date, 'HH:mm')}
             itemProp="startDate"
           >
-            {/* {formatDate(event.date, 'HH:mm')} */}
-            19:00
+            {formatDate(event.date, 'HH:mm')}
           </time>
         )}
         {!isNil(event.location) && (
@@ -85,7 +84,7 @@ const EventTeaser = ({ event }: Props): JSX.Element => {
               target="_blank"
               tw="text-sm"
               itemProp="name"
-              rel="noreferrer"
+              rel="noopener"
             >
               {event.speakerName}
             </a>
@@ -111,7 +110,7 @@ const EventTeaser = ({ event }: Props): JSX.Element => {
             <Button
               as="a"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener"
               href={event.subscriptionLink}
               itemProp="url"
               scheme="blue"
@@ -128,7 +127,7 @@ const EventTeaser = ({ event }: Props): JSX.Element => {
             <Button
               as="a"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener"
               href={event.applyLink}
               itemProp="url"
               scheme="blue"
@@ -145,7 +144,7 @@ const EventTeaser = ({ event }: Props): JSX.Element => {
             <Button
               as="a"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener"
               href={event.youtubeLink}
               itemProp="url"
               scheme="outline"
