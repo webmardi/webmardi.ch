@@ -24,6 +24,10 @@ const socials: { url: string; icon: IconNames }[] = [
     url: 'https://www.instagram.com/webmardi',
     icon: 'instagram',
   },
+  {
+    url: 'https://www.linkedin.com/company/webmardi',
+    icon: 'linkedin',
+  },
 ];
 
 const Header = (): JSX.Element => {

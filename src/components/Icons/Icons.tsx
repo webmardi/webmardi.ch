@@ -4,6 +4,7 @@ import Design from 'assets/icons/design.svg';
 import Facebook from 'assets/icons/facebook.svg';
 import ForEveryone from 'assets/icons/for_everyone.svg';
 import Instagram from 'assets/icons/instagram.svg';
+import Linkedin from 'assets/icons/linkedin.svg';
 import SpecialEvent from 'assets/icons/special_event.svg';
 import Technical from 'assets/icons/technical.svg';
 import Twitter from 'assets/icons/twitter.svg';
@@ -17,6 +18,7 @@ export const iconList: Record<string, unknown> = {
   for_everyone: ForEveryone,
   instagram: Instagram,
   facebook: Facebook,
+  linkedin: Linkedin,
   design: Design,
 };
 
@@ -28,6 +30,7 @@ export type IconNames =
   | 'for_everyone'
   | 'instagram'
   | 'facebook'
+  | 'linkedin'
   | 'design';
 
 const Icons = (): JSX.Element => (
