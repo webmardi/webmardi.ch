@@ -96,13 +96,21 @@ const Footer = (): JSX.Element => {
         </div>
       </div>
 
-      <address tw="items-center justify-between mt-12 text-sm not-italic md:flex md:mt-32">
-        <Interweave
-          content={t('footer.made_by')}
-          css={linksWrapper}
-          allowAttributes
-        />
-        <p>hosted by Infomaniak</p>
+      <address
+        tw="items-center justify-between mt-12 text-sm not-italic md:flex md:mt-32"
+        css={linksWrapper}
+      >
+        <Interweave content={t('footer.made_by')} allowAttributes />
+        <p>
+          hosted by{' '}
+          <a
+            href="https://www.infomaniak.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Infomaniak
+          </a>
+        </p>
         <p>Webmardi © {formatDate(new Date(), 'yyyy')}</p>
       </address>
     </footer>
