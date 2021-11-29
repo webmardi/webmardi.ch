@@ -17,7 +17,7 @@
       "contact_us": "Contact us",
       "contact_us_link": "mailto:contact@webmardi.ch",
       "submit_paper": "Submit your paper",
-      "submit_paper_link": "mailto:contact@webmardi.ch"
+      "submit_paper_link": "https://bit.ly/webmardi-talk"
     },
     "made_by": "Dev by <a href=\"https://yago.io/\" target=\"_blank\" rel=\"noreferrer\">Yago</a> & Design by <a href=\"http://www.nerval.ch/\" target=\"_blank\" rel=\"noreferrer\">Pierre</a>"
   },
@@ -42,7 +42,7 @@
       "subscribe": "Subscribe",
       "replay": "Replay",
       "apply": "Apply",
-      "apply_desc": "Sit mi scelerisque pretium magnis platea facilisi Sit mi scelerisque pretium magnis platea facilisi",
+      "apply_desc": "Drop us your talk proposal for this open slot ! We will be honoured to organise a Webmardi with you <3",
       "types": {
         "special_event": "Special event",
         "technical": "Technical",
