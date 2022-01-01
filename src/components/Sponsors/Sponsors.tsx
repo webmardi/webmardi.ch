@@ -19,20 +19,6 @@ const Sponsors = (): JSX.Element => {
         </div>
         <div tw="mt-6 md:mt-16 grid md:grid-cols-3 gap-6">
           <a
-            href="https://antistatique.net/"
-            target="_blank"
-            rel="noopener"
-            tw="flex items-center justify-center h-40 lg:h-60 bg-blue-dark transition-colors md:hover:bg-blue-light"
-          >
-            <img
-              src="/vectors/antistatique.svg"
-              alt="Antistatique SA"
-              tw="w-auto"
-              width="235"
-              height="42"
-            />
-          </a>
-          <a
             href="https://liip.ch/"
             target="_blank"
             rel="noopener"
@@ -46,8 +32,8 @@ const Sponsors = (): JSX.Element => {
               height="54"
             />
           </a>
-          {/* <a
-            href="https://jolicode.com/"
+          <a
+            href="https://jolicode.ch/"
             target="_blank"
             rel="noopener"
             tw="flex items-center justify-center h-40 lg:h-60 bg-blue-dark transition-colors md:hover:bg-blue-light"
@@ -59,7 +45,7 @@ const Sponsors = (): JSX.Element => {
               width="248"
               height="58"
             />
-          </a> */}
+          </a>
           <div tw="flex items-center justify-center h-40 lg:h-60 bg-blue-light">
             <div tw="text-center lg:mx-20">
               <p>{t('homepage.sponsors.support_us')}</p>
