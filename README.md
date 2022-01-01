@@ -2,12 +2,6 @@
   Webmardi Website
 </h1>
 
-<p align="center">
-  <strong>
-    <a href="https://d36s9anuji.preview.infomaniak.website/">Staging</a>
-  </strong>
-</p>
-
 ## Overview
 
 Webmardi is a static generated website based on [Next.js](https://nextjs.org/).

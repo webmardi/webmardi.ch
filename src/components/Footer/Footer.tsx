@@ -77,7 +77,7 @@ const Footer = (): JSX.Element => {
               as="a"
               href={t('footer.speaker.contact_us_link')}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener"
               scheme="outline"
               tw="mr-5 xl:px-10"
             >
@@ -87,7 +87,7 @@ const Footer = (): JSX.Element => {
               as="a"
               href={t('footer.speaker.submit_paper_link')}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener"
               scheme="cyan"
             >
               {t('footer.speaker.submit_paper')}
@@ -96,9 +96,21 @@ const Footer = (): JSX.Element => {
         </div>
       </div>
 
-      <address tw="items-center justify-between mt-12 text-sm not-italic md:flex md:mt-32">
-        <Interweave content={t('footer.made_by')} css={linksWrapper} />
-        <p>hosted by Infomaniak</p>
+      <address
+        tw="items-center justify-between mt-12 text-sm not-italic md:flex md:mt-32"
+        css={linksWrapper}
+      >
+        <Interweave content={t('footer.made_by')} allowAttributes />
+        <p>
+          hosted by{' '}
+          <a
+            href="https://www.infomaniak.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Infomaniak
+          </a>
+        </p>
         <p>Webmardi © {formatDate(new Date(), 'yyyy')}</p>
       </address>
     </footer>

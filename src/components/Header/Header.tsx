@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { jsx } from '@emotion/react';
@@ -23,6 +24,10 @@ const socials: { url: string; icon: IconNames }[] = [
     url: 'https://www.instagram.com/webmardi',
     icon: 'instagram',
   },
+  {
+    url: 'https://www.linkedin.com/company/webmardi',
+    icon: 'linkedin',
+  },
 ];
 
 const Header = (): JSX.Element => {
@@ -47,7 +52,7 @@ const Header = (): JSX.Element => {
                   href={url}
                   key={icon}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener"
                   tw="inline-block focus:text-cyan transition-colors md:hover:motion-safe:animate-bounce"
                 >
                   <Icon name={icon} />

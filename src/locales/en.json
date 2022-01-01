@@ -17,7 +17,7 @@
       "contact_us": "Contact us",
       "contact_us_link": "mailto:contact@webmardi.ch",
       "submit_paper": "Submit your paper",
-      "submit_paper_link": "mailto:contact@webmardi.ch"
+      "submit_paper_link": "https://bit.ly/webmardi-talk"
     },
     "made_by": "Dev by <a href=\"https://yago.io/\" target=\"_blank\" rel=\"noreferrer\">Yago</a> & Design by <a href=\"http://www.nerval.ch/\" target=\"_blank\" rel=\"noreferrer\">Pierre</a>"
   },
@@ -34,7 +34,7 @@
     },
     "events": {
       "title": "Events",
-      "content": "Let us know if you would like to <a href=\"mailto:contact@webmardi.ch\">speak at webmardi</a> or a topic you would like <a href=\"mailto:contact@webmardi.ch\">hear about</a>.",
+      "content": "Let us know if you would like to <a href=\"https://bit.ly/webmardi-talk\" target=\"_blank\" rel=\"noopener\">speak at webmardi</a> or a topic you would like <a href=\"https://bit.ly/webmardi-wishes\" target=\"_blank\" rel=\"noopener\">hear about</a>.",
       "view_on_meetup": "View on Meetup",
       "meetup_link": "https://www.meetup.com/webmardi/",
       "upcoming": "Upcoming",
@@ -42,7 +42,7 @@
       "subscribe": "Subscribe",
       "replay": "Replay",
       "apply": "Apply",
-      "apply_desc": "Sit mi scelerisque pretium magnis platea facilisi Sit mi scelerisque pretium magnis platea facilisi",
+      "apply_desc": "Drop us your talk proposal for this open slot ! We will be honoured to organise a Webmardi with you <3",
       "types": {
         "special_event": "Special event",
         "technical": "Technical",

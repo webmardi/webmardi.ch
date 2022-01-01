@@ -10,8 +10,7 @@ type Props = {
   description?: string;
 };
 
-// const host = 'https://webmardi.ch';
-const host = 'http://4d7d6aoaeg.preview.infomaniak.website';
+const host = 'https://webmardi.ch';
 
 const SEO = ({ title, imageUrl, description }: Props): JSX.Element => {
   const { asPath } = useRouter();
@@ -65,6 +64,23 @@ const SEO = ({ title, imageUrl, description }: Props): JSX.Element => {
         <meta name="msapplication-TileColor" content="#2525a5" />
         <meta name="msapplication-config" content="/browserconfig.xml" />
         <meta name="theme-color" content="#ffffff" />
+
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=UA-158849142-1"
+        />
+
+        <script
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'UA-158849142-1');
+            `,
+          }}
+        />
       </Head>
     </>
   );

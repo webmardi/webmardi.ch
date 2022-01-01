@@ -3,3 +3,5 @@ node_modules
 .env
 out
 *.DS_Store
+public/sw.js
+public/workbox-*

@@ -52,7 +52,7 @@ const Hero = ({ events }: Props): JSX.Element => {
               <Button
                 as="a"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener"
                 href={subscriptionLink}
                 itemProp="url"
                 size="lg"

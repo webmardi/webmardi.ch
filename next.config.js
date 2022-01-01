@@ -1,7 +1,13 @@
 const path = require('path');
-const withOffline = require('next-offline');
+const withPWA = require('next-pwa');
+const runtimeCaching = require("next-pwa/cache");
 
-module.exports = withOffline({
+module.exports = withPWA({
+  pwa: {
+    dest: 'public',
+    runtimeCaching,
+    buildExcludes: [/middleware-manifest.json$/]
+  },
   webpack(config) {
     config.resolve = {
       ...config.resolve,

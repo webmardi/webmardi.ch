@@ -10,7 +10,7 @@ const supportedLocale: Record<string, Locale> = {
 };
 
 const formatDateI18n = (
-  date: Date | number | string,
+  date: Date | string,
   frmt: string,
   options?: {
     weekStartsOn?: 0 | 1 | 2 | 3 | 4 | 5 | 6;
@@ -19,8 +19,7 @@ const formatDateI18n = (
     useAdditionalDayOfYearTokens?: boolean;
   }
 ): string => {
-  const inputDate =
-    type(date) === 'String' ? new Date(date) : (date as Date | number);
+  const inputDate = type(date) === 'String' ? new Date(date) : (date as Date);
 
   return format(inputDate, frmt, {
     ...options,
