@@ -11,7 +11,7 @@ import Icon from 'components/Icon';
 import { IconNames } from 'components/Icons/Icons';
 import { linksWrapper } from 'styles';
 import { Event } from 'types';
-import { formatDate } from 'utils';
+import { formatDate, getLangName } from 'utils';
 
 type Props = {
   event: Event;
@@ -62,6 +62,11 @@ const EventTeaser = ({ event }: Props): JSX.Element => {
         {!isNil(event.location) && (
           <p tw="text-sm" itemProp="location">
             {event.location}
+          </p>
+        )}
+        {!isNil(event.language) && (
+          <p tw="text-sm" itemProp="inLanguage">
+            {getLangName(event.language)}
           </p>
         )}
       </div>

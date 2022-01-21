@@ -6,6 +6,7 @@ export type Event = {
   speakerJob: string | null;
   speakerLink: string | null;
   location: string | null;
+  language: string | null;
   subscriptionLink: string | null;
   applyLink: string | null;
   youtubeLink: string | null;

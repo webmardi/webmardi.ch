@@ -1,11 +1,11 @@
 export type ApiEvents = {
   object: string;
   results: Result[];
-  next_cursor: string;
+  next_cursor: null;
   has_more: boolean;
 };
 
-type Result = {
+interface Result {
   object: string;
   id: string;
   created_time: Date;
@@ -16,92 +16,104 @@ type Result = {
   archived: boolean;
   properties: Properties;
   url: string;
-};
+}
 
-type Parent = {
+interface Parent {
   type: string;
   database_id: string;
-};
+}
 
-type Properties = {
-  speaker_link: Link;
-  types: Types;
-  subscription_link: Link;
-  youtube_link: Link;
-  apply_link: Link;
-  speaker_job: Location;
+interface Properties {
+  apply_link: ApplyLinkClass;
   date: PropertiesDate;
-  published: Published;
+  speaker_link: ApplyLinkClass;
+  types: Types;
+  language: Language;
+  youtube_link: ApplyLinkClass;
   location: Location;
   speaker_name: Location;
+  subscription_link: ApplyLinkClass;
+  speaker_job: Location;
+  published: Published;
   Name: Name;
-};
+}
 
-type Name = {
+interface Name {
   id: string;
   type: string;
   title: Title[];
-};
+}
 
-type Title = {
+interface Title {
   type: string;
   text: Text;
   annotations: Annotations;
   plain_text: string;
-  href: null;
-};
+  href: null | string;
+}
 
-type Annotations = {
+interface Annotations {
   bold: boolean;
   italic: boolean;
   strikethrough: boolean;
   underline: boolean;
   code: boolean;
   color: string;
-};
+}
 
-type Text = {
+interface Text {
   content: string;
-  link: null;
-};
+  link: Link | null;
+}
 
-type PropertiesDate = {
-  id: string;
-  type: string;
-  date: DateDate;
-};
+interface Link {
+  url: string;
+}
 
-type DateDate = {
-  start: Date;
-  end: null;
-};
-
-type Location = {
-  id: string;
-  type: string;
-  rich_text: Title[];
-};
-
-type Published = {
-  id: string;
-  type: string;
-  checkbox: boolean;
-};
-
-type Link = {
+interface ApplyLinkClass {
   id: string;
   type: string;
   url: null | string;
-};
+}
 
-type Types = {
+interface PropertiesDate {
   id: string;
   type: string;
-  multi_select: MultiSelect[];
-};
+  date: DateDate;
+}
 
-type MultiSelect = {
+interface DateDate {
+  start: Date;
+  end: null;
+  time_zone: null;
+}
+
+interface Language {
+  id: string;
+  type: string;
+  select: LanguageSelect | null;
+}
+
+interface LanguageSelect {
   id: string;
   name: string;
   color: string;
-};
+}
+
+interface Location {
+  id: string;
+  type: string;
+  rich_text: Title[];
+}
+
+interface Published {
+  id: string;
+  type: string;
+  checkbox: boolean;
+}
+
+interface Types {
+  id: string;
+  type: string;
+  multi_select: Select[];
+}

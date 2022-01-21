@@ -7,7 +7,7 @@ import tw from 'twin.macro';
 
 import Button from 'components/Button';
 import { Event } from 'types';
-import { formatDate } from 'utils';
+import { formatDate, getLangName } from 'utils';
 
 type Props = {
   events: Event[];
@@ -30,6 +30,7 @@ const Hero = ({ events }: Props): JSX.Element => {
     speakerName,
     speakerJob,
     location,
+    language,
     subscriptionLink,
   } = futureEvents[nextEventId];
   const date = !isNil(rawDate) ? parseISO(rawDate) : '';
@@ -83,6 +84,9 @@ const Hero = ({ events }: Props): JSX.Element => {
             </time>
           )}
           {!isNil(location) && <p itemProp="location">{location}</p>}
+          {!isNil(language) && (
+            <p itemProp="inLanguage">{getLangName(language)}</p>
+          )}
           <div
             itemScope
             itemProp="performer"
