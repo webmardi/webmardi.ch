@@ -1,7 +1,7 @@
 export type ApiEvents = {
   object: string;
   results: Result[];
-  next_cursor: null;
+  next_cursor: string;
   has_more: boolean;
 };
 
