@@ -91,10 +91,10 @@ interface DateDate {
 interface Language {
   id: string;
   type: string;
-  select: LanguageSelect | null;
+  select: Select | null;
 }
 
-interface LanguageSelect {
+interface Select {
   id: string;
   name: string;
   color: string;
