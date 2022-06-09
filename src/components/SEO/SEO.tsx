@@ -78,6 +78,8 @@ const SEO = ({ title, imageUrl, description }: Props): JSX.Element => {
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', 'UA-158849142-1');
+              gtag('config', 'AW-10892936528');
+              gtag('event', 'conversion', {'send_to': 'AW-10892936528/pqsWCOD8grgDENCKlMoo'});
             `,
           }}
         />
