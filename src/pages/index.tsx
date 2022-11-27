@@ -38,19 +38,17 @@ const Home = ({ events }: Props): JSX.Element => {
   return (
     <Layout>
       <SEO />
-      <h1 className="sr-only">{t('homepage.title')}</h1>
-
       <Hero events={events} />
 
       <main className="px-4 mx-auto mb-20 max-w-7xl">
         <section>
           <div className="mt-12 md:mt-28 md:grid grid-cols-2 gap-6">
-            <h2
+            <h1
               className="text-xl font-bold col-span-2 md:text-xl lg:text-2xl"
               itemProp="name"
             >
               {t('homepage.about.title')}
-            </h2>
+            </h1>
             <p className="mt-2">{t('homepage.about.content')}</p>
             <div className="mt-6 md:text-right md:mt-0">
               <Button
