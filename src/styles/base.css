@@ -1,0 +1,7 @@
+@import "./tailwind.css";
+
+@import "../components/Carousel/Carousel.css";
+
+.link a {
+    @apply underline md:hover:underline-blue-DEFAULT underline-offset-small md:hover:bg-blue md:hover:text-white md:hover:no-underline transition-colors;
+}

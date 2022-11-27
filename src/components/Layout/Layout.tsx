@@ -1,7 +1,6 @@
 import React, { FunctionComponent } from 'react';
-import { jsx } from '@emotion/react';
-import tw, { GlobalStyles } from 'twin.macro';
 
+// eslint-disable-next-line import/default
 import Footer from 'components/Footer';
 import Header from 'components/Header';
 import Icons from 'components/Icons';
@@ -12,7 +11,7 @@ type Props = {
 
 const Layout = ({ children }: Props): JSX.Element => (
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  <div tw="overflow-x-hidden font-sans text-sm antialiased font-medium md:text-base text-blue">
+  <div className="overflow-x-hidden font-sans text-sm antialiased font-medium md:text-base text-blue">
     <Icons />
     <Header />
     {children}
@@ -23,12 +22,9 @@ Layout.defaultProps = {};
 
 // For Storybook
 export const LayoutDecorator = (Story: FunctionComponent): JSX.Element => (
-  <>
-    <GlobalStyles />
-    <div tw="font-sans antialiased text-blue">
-      <Story />
-    </div>
-  </>
+  <div className="font-sans antialiased text-blue">
+    <Story />
+  </div>
 );
 
 export default Layout;

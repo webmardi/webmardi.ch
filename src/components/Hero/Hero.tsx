@@ -1,9 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { jsx } from '@emotion/react';
 import { closestIndexTo, isAfter, parseISO } from 'date-fns';
 import { isNil } from 'ramda';
-import tw from 'twin.macro';
 
 import Button from 'components/Button';
 import { Event } from 'types';
@@ -22,7 +20,12 @@ const Hero = ({ events }: Props): JSX.Element => {
     new Date(),
     futureEvents.map(i => parseISO(i.date ?? ''))
   );
-  if (isNil(futureEvents[nextEventId])) return <span />; // Just in case...
+  if (
+    isNil(nextEventId) &&
+    isNil(futureEvents[nextEventId as unknown as number])
+  ) {
+    return <span />; // Just in case...
+  }
 
   const {
     title,
@@ -32,24 +35,27 @@ const Hero = ({ events }: Props): JSX.Element => {
     location,
     language,
     subscriptionLink,
-  } = futureEvents[nextEventId];
+  } = futureEvents[nextEventId as unknown as number];
   const date = !isNil(rawDate) ? parseISO(rawDate) : '';
 
   return (
     <section
-      tw="text-white bg-blue"
+      className="text-white bg-blue"
       itemScope
       itemType="https://schema.org/Event"
     >
-      <div tw="px-4 py-10 mx-auto border-b md:py-28 max-w-7xl border-blue-lighter grid md:grid-cols-3 gap-12 md:gap-6">
-        <div tw="col-span-2">
+      <div className="px-4 py-10 mx-auto border-b md:py-28 max-w-7xl border-blue-lighter grid md:grid-cols-3 gap-12 md:gap-6">
+        <div className="col-span-2">
           {!isNil(title) && (
-            <h2 tw="text-lg font-bold md:text-xl lg:text-2xl" itemProp="name">
+            <h2
+              className="text-lg font-bold md:text-xl lg:text-2xl"
+              itemProp="name"
+            >
               {title}
             </h2>
           )}
           {!isNil(subscriptionLink) && (
-            <div tw="mt-8 lg:mt-14">
+            <div className="mt-8 lg:mt-14">
               <Button
                 as="a"
                 target="_blank"
@@ -64,10 +70,10 @@ const Hero = ({ events }: Props): JSX.Element => {
             </div>
           )}
         </div>
-        <div tw="md:order-first">
+        <div className="md:order-first">
           {!isNil(date) && (
             <time
-              tw="block text-lg font-bold md:text-xl text-cyan"
+              className="block text-lg font-bold md:text-xl text-cyan"
               dateTime={formatDate(date, 'yyyy-MM-dd')}
               itemProp="startDate"
             >
@@ -76,7 +82,7 @@ const Hero = ({ events }: Props): JSX.Element => {
           )}
           {!isNil(date) && (
             <time
-              tw="block mt-2"
+              className="block mt-2"
               dateTime={formatDate(date, 'HH:mm')}
               itemProp="startDate"
             >
@@ -94,14 +100,14 @@ const Hero = ({ events }: Props): JSX.Element => {
           >
             {!isNil(speakerName) && (
               <p
-                tw="mt-10 text-lg font-bold md:text-xl text-cyan"
+                className="mt-10 text-lg font-bold md:text-xl text-cyan"
                 itemProp="name"
               >
                 {speakerName}
               </p>
             )}
             {!isNil(speakerJob) && (
-              <p itemProp="jobTitle" tw="mt-2">
+              <p itemProp="jobTitle" className="mt-2">
                 {speakerJob}
               </p>
             )}

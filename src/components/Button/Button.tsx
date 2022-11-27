@@ -1,7 +1,6 @@
 import React from 'react';
-import { jsx } from '@emotion/react';
+import clsx from 'clsx';
 import { isNil } from 'ramda';
-import tw from 'twin.macro';
 
 import Icon from 'components/Icon';
 import { IconNames } from 'components/Icons/Icons';
@@ -12,6 +11,7 @@ type Props = {
   size?: 'base' | 'lg';
   children: React.ReactNode | string;
   iconRight?: IconNames;
+  className?: string;
   // eslint-disable-next-line
   [x: string]: any;
 };
@@ -32,21 +32,22 @@ const Button = React.forwardRef(
   ) => (
     <Component
       ref={ref}
-      tw="inline-block font-bold transition-colors"
-      css={[
-        size === 'lg' && tw`px-4 py-2 lg:px-8 lg:py-3 lg:text-xl text-lg`,
-        size === 'base' && tw`px-4 py-2`,
-        scheme === 'outline' &&
-          tw`border border-blue md:hover:bg-blue md:hover:text-white focus:bg-blue-dark focus:text-white bg-white`,
-        scheme === 'cyan' &&
-          tw`border border-cyan md:hover:border-blue md:hover:bg-white bg-cyan text-blue focus:text-blue-dark md:hover:text-blue-lighter`,
-        scheme === 'blue' &&
-          tw`border border-blue md:hover:border-cyan md:hover:bg-cyan focus:bg-cyan bg-blue text-white focus:text-blue-dark md:hover:text-blue`,
-      ]}
       {...props}
+      className={clsx(
+        props?.className,
+        'inline-block font-bold transition-colors',
+        size === 'lg' && 'px-4 py-2 lg:px-8 lg:py-3 lg:text-xl text-lg',
+        size === 'base' && 'px-4 py-2',
+        scheme === 'outline' &&
+          'border border-blue md:hover:bg-blue md:hover:text-white focus:bg-blue-dark focus:text-white bg-white',
+        scheme === 'cyan' &&
+          'border border-cyan md:hover:border-blue md:hover:bg-white bg-cyan text-blue focus:text-blue-dark md:hover:text-blue-lighter',
+        scheme === 'blue' &&
+          'border border-blue md:hover:border-cyan md:hover:bg-cyan focus:bg-cyan bg-blue text-white focus:text-blue-dark md:hover:text-blue'
+      )}
     >
       {children}
-      {!isNil(iconRight) && <Icon name={iconRight} tw="ml-4 text-lg" />}
+      {!isNil(iconRight) && <Icon name={iconRight} className="ml-4 text-lg" />}
     </Component>
   )
 );

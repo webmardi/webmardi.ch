@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
+import parse from 'react-html-parser';
 import { useTranslation } from 'react-i18next';
-import { css, jsx } from '@emotion/react';
 import { isAfter, isBefore, parseISO } from 'date-fns';
-import Interweave from 'interweave';
 import { GetStaticProps } from 'next';
 import { isNil } from 'ramda';
-import tw from 'twin.macro';
 
 import Button from 'components/Button';
 import Carousel from 'components/Carousel';
@@ -14,7 +12,6 @@ import Hero from 'components/Hero';
 import Layout from 'components/Layout';
 import SEO from 'components/SEO';
 import Sponsors from 'components/Sponsors';
-import { linksWrapper } from 'styles';
 import { Event } from 'types';
 import { getEvents } from 'utils';
 
@@ -41,21 +38,21 @@ const Home = ({ events }: Props): JSX.Element => {
   return (
     <Layout>
       <SEO />
-      <h1 tw="sr-only">{t('homepage.title')}</h1>
+      <h1 className="sr-only">{t('homepage.title')}</h1>
 
       <Hero events={events} />
 
-      <main tw="px-4 mx-auto mb-20 max-w-7xl">
+      <main className="px-4 mx-auto mb-20 max-w-7xl">
         <section>
-          <div tw="mt-12 md:mt-28 md:grid grid-cols-2 gap-6">
+          <div className="mt-12 md:mt-28 md:grid grid-cols-2 gap-6">
             <h2
-              tw="text-xl font-bold col-span-2 md:text-xl lg:text-2xl"
+              className="text-xl font-bold col-span-2 md:text-xl lg:text-2xl"
               itemProp="name"
             >
               {t('homepage.about.title')}
             </h2>
-            <p tw="mt-2">{t('homepage.about.content')}</p>
-            <div tw="mt-6 md:text-right md:mt-0">
+            <p className="mt-2">{t('homepage.about.content')}</p>
+            <div className="mt-6 md:text-right md:mt-0">
               <Button
                 as="a"
                 target="_blank"
@@ -69,25 +66,23 @@ const Home = ({ events }: Props): JSX.Element => {
             </div>
           </div>
 
-          <div tw="mt-14">
+          <div className="mt-14">
             <Carousel />
           </div>
         </section>
 
         <section>
-          <div tw="mt-12 md:mt-28 md:grid grid-cols-2 gap-6">
+          <div className="mt-12 md:mt-28 md:grid grid-cols-2 gap-6">
             <h2
-              tw="text-xl font-bold col-span-2 md:text-xl lg:text-2xl"
+              className="text-xl font-bold col-span-2 md:text-xl lg:text-2xl"
               itemProp="name"
             >
               {t('homepage.events.title')}
             </h2>
-            <Interweave
-              tw="mt-2"
-              content={t('homepage.events.content')}
-              css={linksWrapper}
-            />
-            <div tw="mt-6 md:text-right md:mt-0">
+            <p className="mt-2 link">
+              {parse(t('homepage.events.content')) as unknown as string}
+            </p>
+            <div className="mt-6 md:text-right md:mt-0">
               <Button
                 as="a"
                 target="_blank"
@@ -100,7 +95,7 @@ const Home = ({ events }: Props): JSX.Element => {
             </div>
           </div>
 
-          <h3 tw="pb-6 mt-10 text-lg font-bold border-b-4 md:text-xl border-blue">
+          <h3 className="pb-6 mt-10 text-lg font-bold border-b-4 md:text-xl border-blue">
             {t('homepage.events.upcoming')}
           </h3>
 
@@ -110,7 +105,7 @@ const Home = ({ events }: Props): JSX.Element => {
             ))}
           </ul>
 
-          <h3 tw="pb-6 mt-16 text-lg font-bold border-b-4 md:text-xl border-blue">
+          <h3 className="pb-6 mt-16 text-lg font-bold border-b-4 md:text-xl border-blue">
             {t('homepage.events.past')}
           </h3>
 
@@ -121,7 +116,7 @@ const Home = ({ events }: Props): JSX.Element => {
           </ul>
 
           {viewMore <= pastEvents.length && (
-            <Button tw="mt-8" onClick={() => setViewMore(viewMore + 5)}>
+            <Button className="mt-8" onClick={() => setViewMore(viewMore + 5)}>
               {t('homepage.events.view_more')}
             </Button>
           )}
