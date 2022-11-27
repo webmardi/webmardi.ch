@@ -2,6 +2,9 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
+  content: [
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     colors: {
       cyan: '#00C9FF',

@@ -5,6 +5,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Changed
+- Update all dependencies
+- Refactor all Tailwind utilities usage
+
+### Added
+- Tailwind native usage
+
+### Removed
+- Twin babel macro
 
 ## [1.0.2] - 2022-01-21
 ### Added

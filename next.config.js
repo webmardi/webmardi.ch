@@ -1,13 +1,13 @@
 const path = require('path');
-const withPWA = require('next-pwa');
 const runtimeCaching = require("next-pwa/cache");
 
+const withPWA = require('next-pwa')({
+  dest: 'public',
+  runtimeCaching,
+  buildExcludes: [/middleware-manifest.json$/],
+})
+
 module.exports = withPWA({
-  pwa: {
-    dest: 'public',
-    runtimeCaching,
-    buildExcludes: [/middleware-manifest.json$/]
-  },
   webpack(config) {
     config.resolve = {
       ...config.resolve,
