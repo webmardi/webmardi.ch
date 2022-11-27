@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import parse from 'react-html-parser';
 import { useTranslation } from 'react-i18next';
 import { isAfter, isBefore, parseISO } from 'date-fns';
 import { GetStaticProps } from 'next';
+import Link from 'next/link';
 import { isNil } from 'ramda';
 
 import Button from 'components/Button';
@@ -21,7 +22,6 @@ type Props = {
 
 const Home = ({ events }: Props): JSX.Element => {
   const { t } = useTranslation();
-  const [viewMore, setViewMore] = useState(2);
 
   const futureEvents = events
     .filter(i => !isNil(i.date) && isAfter(parseISO(i.date), new Date()))
@@ -110,16 +110,14 @@ const Home = ({ events }: Props): JSX.Element => {
           </h3>
 
           <ul>
-            {pastEvents.slice(0, viewMore).map(event => (
+            {pastEvents.slice(0, 2).map(event => (
               <EventTeaser event={event} key={`event-teaser-${event.title}`} />
             ))}
           </ul>
 
-          {viewMore <= pastEvents.length && (
-            <Button className="mt-8" onClick={() => setViewMore(viewMore + 5)}>
-              {t('homepage.events.view_more')}
-            </Button>
-          )}
+          <Button as={Link} className="mt-8" href="/events">
+            {t('homepage.events.view_more')}
+          </Button>
         </section>
       </main>
 

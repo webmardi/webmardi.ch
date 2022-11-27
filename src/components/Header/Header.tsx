@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-no-target-blank */
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import Link from 'next/link';
 
 import Icon from 'components/Icon';
 import { IconNames } from 'components/Icons/Icons';
@@ -35,13 +36,15 @@ const Header = (): JSX.Element => {
     <header className="text-white bg-blue">
       <div className="px-4 py-4 mx-auto border-b md:py-10 max-w-7xl border-blue-lighter">
         <div className="items-center justify-between md:flex space-y-4 md:space-y-0">
-          <img
-            src="/vectors/logo.svg"
-            alt={t('header.logo')}
-            className="w-1/3 md:w-auto"
-            width="207"
-            height="33"
-          />
+          <Link href="/">
+            <img
+              src="/vectors/logo.svg"
+              alt={t('header.logo')}
+              className="w-1/3 md:w-auto"
+              width="207"
+              height="33"
+            />
+          </Link>
           <p className="flex flex-col sm:flex-row sm:items-center">
             {t('header.follow_us')}
             <span className="text-lg sm:pl-8 md:text-xl space-x-4 md:space-x-6">
