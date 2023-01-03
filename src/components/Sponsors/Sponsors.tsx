@@ -31,14 +31,14 @@ const Sponsors = (): JSX.Element => {
             />
           </a>
           <a
-            href="https://jolicode.ch/"
+            href="https://hidora.io/"
             target="_blank"
             rel="noopener"
             className="flex items-center justify-center h-40 lg:h-60 bg-blue-dark transition-colors md:hover:bg-blue-light"
           >
             <img
-              src="/vectors/jolicode.svg"
-              alt="Jolicode"
+              src="/vectors/hidora.svg"
+              alt="Hidora"
               className="w-auto"
               width="248"
               height="58"
