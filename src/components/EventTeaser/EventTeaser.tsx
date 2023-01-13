@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-no-target-blank */
-import React from 'react';
+import React, { ReactElement } from 'react';
+import parse from 'react-html-parser';
 import { useTranslation } from 'react-i18next';
 import { isAfter, isBefore, parseISO } from 'date-fns';
 import { isEmpty, isNil } from 'ramda';
@@ -58,7 +59,7 @@ const EventTeaser = ({ event }: Props): JSX.Element => {
         )}
         {!isNil(event.location) && (
           <p className="text-sm" itemProp="location">
-            {event.location}
+            {parse(event.location) as ReactElement[]}
           </p>
         )}
         {!isNil(event.language) && (
@@ -76,7 +77,7 @@ const EventTeaser = ({ event }: Props): JSX.Element => {
         >
           {!isNil(event.speakerName) && isNil(event.speakerLink) && (
             <p className="text-sm" itemProp="name">
-              {event.speakerName}
+              {parse(event.speakerName) as ReactElement[]}
             </p>
           )}
           {!isNil(event.speakerName) && !isNil(event.speakerLink) && (
@@ -87,12 +88,12 @@ const EventTeaser = ({ event }: Props): JSX.Element => {
               itemProp="name"
               rel="noopener"
             >
-              {event.speakerName}
+              {parse(event.speakerName) as ReactElement[]}
             </a>
           )}
           {!isNil(event.speakerJob) && (
             <p itemProp="jobTitle" className="mt-1 text-sm">
-              {event.speakerJob}
+              {parse(event.speakerJob) as ReactElement[]}
             </p>
           )}
         </div>

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
+import parse from 'react-html-parser';
 import { useTranslation } from 'react-i18next';
 import { closestIndexTo, isAfter, parseISO } from 'date-fns';
 import { isNil } from 'ramda';
@@ -89,7 +90,9 @@ const Hero = ({ events }: Props): JSX.Element => {
               {formatDate(date, 'HH:mm')}
             </time>
           )}
-          {!isNil(location) && <p itemProp="location">{location}</p>}
+          {!isNil(location) && (
+            <p itemProp="location">{parse(location) as ReactElement[]}</p>
+          )}
           {!isNil(language) && (
             <p itemProp="inLanguage">{getLangName(language)}</p>
           )}
@@ -103,12 +106,12 @@ const Hero = ({ events }: Props): JSX.Element => {
                 className="mt-10 text-lg font-bold md:text-xl text-cyan"
                 itemProp="name"
               >
-                {speakerName}
+                {parse(speakerName) as ReactElement[]}
               </p>
             )}
             {!isNil(speakerJob) && (
               <p itemProp="jobTitle" className="mt-2">
-                {speakerJob}
+                {parse(speakerJob) as ReactElement[]}
               </p>
             )}
           </div>

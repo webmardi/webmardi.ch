@@ -23,7 +23,7 @@ interface Parent {
   database_id: string;
 }
 
-interface Properties {
+export type Properties = {
   apply_link: ApplyLinkClass;
   date: PropertiesDate;
   speaker_link: ApplyLinkClass;
@@ -36,7 +36,7 @@ interface Properties {
   speaker_job: Location;
   published: Published;
   Name: Name;
-}
+};
 
 interface Name {
   id: string;
