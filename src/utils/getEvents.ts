@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 import { ApiEvents, Event } from 'types';
-import { sanitizeEvents } from 'utils';
+import sanitizeEvents from 'utils/sanitizeEvents';
 
 const getEvents = async (cursor?: string): Promise<Event[]> => {
   const events: Event[] = [];
