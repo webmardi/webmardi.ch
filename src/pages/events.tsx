@@ -28,16 +28,11 @@ const Home = ({ events }: Props): JSX.Element => {
       groupBy(
         i => format(parseISO(i.date ?? ''), 'yyyy'),
         events
-          .filter(i => {
-            console.log(
-              slugify(i?.title ?? '', { lower: true }),
-              '→',
+          .filter(i =>
+            slugify(i?.title ?? '', { lower: true }).includes(
               slugify(search, { lower: true })
-            );
-            return slugify(i?.title ?? '', { lower: true }).includes(
-              slugify(search, { lower: true })
-            );
-          })
+            )
+          )
           .sort((a, b) =>
             isAfter(parseISO(b.date ?? ''), parseISO(a.date ?? '')) ? 1 : -1
           )

@@ -22,7 +22,8 @@
     "made_by": "Dev by <a href=\"https://yago.io/\" target=\"_blank\" rel=\"noreferrer\">Yago</a> & Design by <a href=\"http://www.nerval.ch/\" target=\"_blank\" rel=\"noreferrer\">Pierre</a>"
   },
   "hero": {
-    "register": "Register"
+    "register": "Register",
+    "live": "Livestream"
   },
   "homepage": {
     "title": "Webmardi",
@@ -42,6 +43,7 @@
       "search": "Search...",
       "subscribe": "Subscribe",
       "replay": "Replay",
+      "live": "Livestream",
       "apply": "Apply",
       "apply_desc": "Drop us your talk proposal for this open slot ! We will be honoured to organise a Webmardi with you <3",
       "types": {

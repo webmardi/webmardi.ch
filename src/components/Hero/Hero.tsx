@@ -36,6 +36,7 @@ const Hero = ({ events }: Props): JSX.Element => {
     location,
     language,
     subscriptionLink,
+    youtubeLink,
   } = futureEvents[nextEventId as unknown as number];
   const date = !isNil(rawDate) ? parseISO(rawDate) : '';
 
@@ -55,21 +56,39 @@ const Hero = ({ events }: Props): JSX.Element => {
               {title}
             </h2>
           )}
-          {!isNil(subscriptionLink) && (
-            <div className="mt-8 lg:mt-14">
-              <Button
-                as="a"
-                target="_blank"
-                rel="noopener"
-                href={subscriptionLink}
-                itemProp="url"
-                size="lg"
-                scheme="cyan"
-              >
-                {t('hero.register')}
-              </Button>
-            </div>
-          )}
+          <div className="flex flex-wrap items-center gap-x-8">
+            {!isNil(subscriptionLink) && (
+              <div className="mt-8 lg:mt-14">
+                <Button
+                  as="a"
+                  target="_blank"
+                  rel="noopener"
+                  href={subscriptionLink}
+                  itemProp="url"
+                  size="lg"
+                  scheme="cyan"
+                >
+                  {t('hero.register')}
+                </Button>
+              </div>
+            )}
+            {!isNil(youtubeLink) && (
+              <div className="mt-8 lg:mt-14">
+                <Button
+                  as="a"
+                  target="_blank"
+                  rel="noopener"
+                  href={youtubeLink}
+                  itemProp="url"
+                  size="lg"
+                  scheme="outline"
+                  iconRight="youtube"
+                >
+                  {t('hero.live')}
+                </Button>
+              </div>
+            )}
+          </div>
         </div>
         <div className="md:order-first">
           {!isNil(date) && (

@@ -2,7 +2,7 @@
 import React, { ReactElement } from 'react';
 import parse from 'react-html-parser';
 import { useTranslation } from 'react-i18next';
-import { isAfter, isBefore, parseISO } from 'date-fns';
+import { endOfDay, isAfter, parseISO } from 'date-fns';
 import { isEmpty, isNil } from 'ramda';
 
 import Button from 'components/Button';
@@ -103,12 +103,28 @@ const EventTeaser = ({ event }: Props): JSX.Element => {
           {t('homepage.events.apply_desc')}
         </p>
       )}
-      {!isNil(event.subscriptionLink) &&
-        !isEmpty(event.subscriptionLink) &&
-        isNil(event.applyLink) &&
-        !isNil(event.date) &&
-        isAfter(parseISO(event.date), new Date()) && (
-          <div className="flex items-center sm:justify-end sm:col-span-4 lg:col-span-2">
+      <div className="flex flex-wrap items-center sm:justify-end sm:col-span-4 lg:col-span-2 gap-1">
+        {!isNil(event.youtubeLink) && !isEmpty(event.youtubeLink) && (
+          <Button
+            as="a"
+            target="_blank"
+            rel="noopener"
+            href={event.youtubeLink}
+            itemProp="url"
+            scheme="outline"
+            iconRight="youtube"
+          >
+            {!isNil(event.date) &&
+            isAfter(endOfDay(parseISO(event.date)), new Date())
+              ? t('homepage.events.live')
+              : t('homepage.events.replay')}
+          </Button>
+        )}
+        {!isNil(event.subscriptionLink) &&
+          !isEmpty(event.subscriptionLink) &&
+          isNil(event.applyLink) &&
+          !isNil(event.date) &&
+          isAfter(parseISO(event.date), new Date()) && (
             <Button
               as="a"
               target="_blank"
@@ -119,13 +135,11 @@ const EventTeaser = ({ event }: Props): JSX.Element => {
             >
               {t('homepage.events.subscribe')}
             </Button>
-          </div>
-        )}
-      {!isNil(event.applyLink) &&
-        !isEmpty(event.applyLink) &&
-        !isNil(event.date) &&
-        isAfter(parseISO(event.date), new Date()) && (
-          <div className="flex items-center sm:justify-end sm:col-span-4 lg:col-span-2">
+          )}
+        {!isNil(event.applyLink) &&
+          !isEmpty(event.applyLink) &&
+          !isNil(event.date) &&
+          isAfter(parseISO(event.date), new Date()) && (
             <Button
               as="a"
               target="_blank"
@@ -136,26 +150,8 @@ const EventTeaser = ({ event }: Props): JSX.Element => {
             >
               {t('homepage.events.apply')}
             </Button>
-          </div>
-        )}
-      {!isNil(event.youtubeLink) &&
-        !isEmpty(event.youtubeLink) &&
-        !isNil(event.date) &&
-        isBefore(parseISO(event.date), new Date()) && (
-          <div className="flex items-center sm:justify-end sm:col-span-4 lg:col-span-2">
-            <Button
-              as="a"
-              target="_blank"
-              rel="noopener"
-              href={event.youtubeLink}
-              itemProp="url"
-              scheme="outline"
-              iconRight="youtube"
-            >
-              {t('homepage.events.replay')}
-            </Button>
-          </div>
-        )}
+          )}
+      </div>
     </li>
   );
 };

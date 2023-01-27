@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Changed
 - Keep current event in “future event” until midnight - #76
+- Keep YouTube CTA when it's available - #77
 
 ## [1.1.5] - 2023-01-20
 ### Changed
