@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 import parse from 'react-html-parser';
 import { useTranslation } from 'react-i18next';
-import { closestIndexTo, isAfter, parseISO } from 'date-fns';
+import { closestIndexTo, endOfDay, isAfter, parseISO } from 'date-fns';
 import { isNil } from 'ramda';
 
 import Button from 'components/Button';
@@ -15,7 +15,7 @@ type Props = {
 const Hero = ({ events }: Props): JSX.Element => {
   const { t } = useTranslation();
   const futureEvents = events.filter(
-    i => !isNil(i.date) && isAfter(parseISO(i.date), new Date())
+    i => !isNil(i.date) && isAfter(endOfDay(parseISO(i.date)), new Date())
   );
   const nextEventId = closestIndexTo(
     new Date(),

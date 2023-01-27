@@ -1,7 +1,7 @@
 import React from 'react';
 import parse from 'react-html-parser';
 import { useTranslation } from 'react-i18next';
-import { isAfter, isBefore, parseISO } from 'date-fns';
+import { endOfDay, isAfter, isBefore, parseISO } from 'date-fns';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
 import { isNil } from 'ramda';
@@ -24,13 +24,17 @@ const Home = ({ events }: Props): JSX.Element => {
   const { t } = useTranslation();
 
   const futureEvents = events
-    .filter(i => !isNil(i.date) && isAfter(parseISO(i.date), new Date()))
+    .filter(
+      i => !isNil(i.date) && isAfter(endOfDay(parseISO(i.date)), new Date())
+    )
     .sort((a, b) =>
       isAfter(parseISO(b.date ?? ''), parseISO(a.date ?? '')) ? -1 : 1
     );
 
   const pastEvents = events
-    .filter(i => !isNil(i.date) && isBefore(parseISO(i.date), new Date()))
+    .filter(
+      i => !isNil(i.date) && isBefore(endOfDay(parseISO(i.date)), new Date())
+    )
     .sort((a, b) =>
       isAfter(parseISO(b.date ?? ''), parseISO(a.date ?? '')) ? 1 : -1
     );
