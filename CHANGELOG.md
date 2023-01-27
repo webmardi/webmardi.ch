@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [1.1.6] - 2023-01-27
 ### Changed
 - Keep current event in “future event” until midnight - #76
 - Keep YouTube CTA when it's available - #77
@@ -55,7 +57,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add Linkedin link
 - add GA script
 
-[Unreleased]: https://github.com/webmardi/webmardi.ch/compare/v1.1.5...HEAD
+[Unreleased]: https://github.com/webmardi/webmardi.ch/compare/v1.1.6...HEAD
+[1.1.6]: https://github.com/webmardi/webmardi.ch/compare/v1.1.5...v1.1.6
 [1.1.5]: https://github.com/webmardi/webmardi.ch/compare/v1.1.4...v1.1.5
 [1.1.4]: https://github.com/webmardi/webmardi.ch/compare/v1.1.3...v1.1.4
 [1.1.3]: https://github.com/webmardi/webmardi.ch/compare/v1.1.2...v1.1.3
