@@ -5,6 +5,7 @@ import Facebook from 'assets/icons/facebook.svg';
 import ForEveryone from 'assets/icons/for_everyone.svg';
 import Instagram from 'assets/icons/instagram.svg';
 import Linkedin from 'assets/icons/linkedin.svg';
+import Mastodon from 'assets/icons/mastodon.svg';
 import SpecialEvent from 'assets/icons/special_event.svg';
 import Technical from 'assets/icons/technical.svg';
 import Twitter from 'assets/icons/twitter.svg';
@@ -20,6 +21,7 @@ export const iconList: Record<string, unknown> = {
   facebook: Facebook,
   linkedin: Linkedin,
   design: Design,
+  mastodon: Mastodon,
 };
 
 export type IconNames =
@@ -31,7 +33,8 @@ export type IconNames =
   | 'instagram'
   | 'facebook'
   | 'linkedin'
-  | 'design';
+  | 'design'
+  | 'mastodon';
 
 const Icons = (): JSX.Element => (
   <div style={{ display: 'none' }}>

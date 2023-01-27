@@ -16,6 +16,10 @@ const socials: { url: string; icon: IconNames }[] = [
     icon: 'twitter',
   },
   {
+    url: 'https://tooting.ch/@webmardi',
+    icon: 'mastodon',
+  },
+  {
     url: 'https://www.youtube.com/webmardi',
     icon: 'youtube',
   },
