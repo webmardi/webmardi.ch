@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [1.1.8] - 2023-03-17
 ### Changed
 - Update dependencies
 
@@ -63,7 +65,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add Linkedin link
 - add GA script
 
-[Unreleased]: https://github.com/webmardi/webmardi.ch/compare/v1.1.7...HEAD
+[Unreleased]: https://github.com/webmardi/webmardi.ch/compare/v1.1.8...HEAD
+[1.1.8]: https://github.com/webmardi/webmardi.ch/compare/v1.1.7...v1.1.8
 [1.1.7]: https://github.com/webmardi/webmardi.ch/compare/v1.1.6...v1.1.7
 [1.1.6]: https://github.com/webmardi/webmardi.ch/compare/v1.1.5...v1.1.6
 [1.1.5]: https://github.com/webmardi/webmardi.ch/compare/v1.1.4...v1.1.5
