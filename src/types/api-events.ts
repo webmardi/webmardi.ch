@@ -34,6 +34,8 @@ export type Properties = {
   speaker_name: Location;
   subscription_link: ApplyLinkClass;
   speaker_job: Location;
+  seo_body: SeoBody;
+  seo_hashtags: SeoHashtags;
   published: Published;
   Name: Name;
 };
@@ -101,6 +103,18 @@ interface Select {
 }
 
 interface Location {
+  id: string;
+  type: string;
+  rich_text: Title[];
+}
+
+interface SeoBody {
+  id: string;
+  type: string;
+  rich_text: Title[];
+}
+
+interface SeoHashtags {
   id: string;
   type: string;
   rich_text: Title[];

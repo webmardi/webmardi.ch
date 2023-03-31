@@ -62,6 +62,14 @@
       "contact_us_link": "https://docs.google.com/document/d/1qjxg6l_nQ_ycgYwJAdXWSEqmB5D8uoWNs-hEtrO_stw/edit?usp=sharing"
     }
   },
+  "event": {
+    "speaker": "Speaker:",
+    "lang": "Language:",
+    "be_held": "Will be held in ",
+    "who": "Accessible:",
+    "where": "Location:",
+    "youtube": "If you can't make it, the event will be available on Youtube afterwards.\nThanks to our wonderful premium sponsors @liip_ch & @HidoraSwiss who help us make these journey possible \uD83D\uDE42"
+  },
   "seo": {
     "title": "Webmardi - Monthly events in western Switzerland",
     "description": "Webmardi is a Swiss-based association that organises free monthly events in western Switzerland."

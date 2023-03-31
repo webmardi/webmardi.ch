@@ -28,6 +28,8 @@ const sanitizeEvents = (results: ApiEvents['results']): Event[] =>
     language: properties.language.select?.name ?? null,
     speakerName: getRichContent(properties.speaker_name.rich_text),
     speakerJob: getRichContent(properties.speaker_job.rich_text),
+    seoBody: getRichContent(properties.seo_body.rich_text) ?? '',
+    seoHashtags: getRichContent(properties.seo_hashtags.rich_text) ?? '',
     speakerLink: properties.speaker_link.url ?? null,
     location: getRichContent(properties.location.rich_text),
     subscriptionLink: properties.subscription_link.url ?? null,

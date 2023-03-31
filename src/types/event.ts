@@ -5,6 +5,8 @@ export type Event = {
   speakerName: string | null;
   speakerJob: string | null;
   speakerLink: string | null;
+  seoBody: string;
+  seoHashtags: string;
   location: string | null;
   language: string | null;
   subscriptionLink: string | null;
