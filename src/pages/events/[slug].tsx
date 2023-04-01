@@ -1,7 +1,6 @@
 import React, { ReactElement } from 'react';
 import parse from 'react-html-parser';
 import { useTranslation } from 'react-i18next';
-import slugify from '@sindresorhus/slugify';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { isNil } from 'ramda';
 
@@ -9,7 +8,7 @@ import Layout from 'components/Layout';
 import SEO from 'components/SEO';
 import Sponsors from 'components/Sponsors';
 import { Event } from 'types';
-import { getEvents, getLangName } from 'utils';
+import { getEvent, getEvents, getLangName } from 'utils';
 
 type Props = {
   event: Event;
@@ -129,22 +128,22 @@ const Home = ({ event }: Props): JSX.Element => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const events = await getEvents();
-  return {
-    props: {
-      event: events.filter(
-        ({ title }) => !isNil(title) && slugify(title) === params?.slug
-      )[0],
-    },
-  };
+  const event = await getEvent(params?.slug as string);
+  return isNil(event)
+    ? { notFound: true }
+    : {
+        props: {
+          event,
+        },
+      };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const events: Event[] = await getEvents();
   return {
     paths: events
-      .filter(({ title }) => !isNil(title))
-      .map(({ title }) => ({ params: { slug: slugify(title as string) } })),
+      .filter(({ slug }) => !isNil(slug))
+      .map(({ slug }) => ({ params: { slug: slug as string } })),
     fallback: false,
   };
 };

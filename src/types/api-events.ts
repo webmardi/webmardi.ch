@@ -36,6 +36,7 @@ export type Properties = {
   speaker_job: Location;
   seo_body: SeoBody;
   seo_hashtags: SeoHashtags;
+  slug: Slug;
   published: Published;
   Name: Name;
 };
@@ -115,6 +116,12 @@ interface SeoBody {
 }
 
 interface SeoHashtags {
+  id: string;
+  type: string;
+  rich_text: Title[];
+}
+
+interface Slug {
   id: string;
   type: string;
   rich_text: Title[];

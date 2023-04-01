@@ -23,6 +23,7 @@ const getRichContent = (
 const sanitizeEvents = (results: ApiEvents['results']): Event[] =>
   results.map(({ properties }) => ({
     title: properties.Name.title[0]?.plain_text ?? null,
+    slug: properties.slug.rich_text[0]?.plain_text ?? null,
     date: (properties.date.date.start as unknown as string) ?? null,
     types: properties.types.multi_select.map(i => i.name) ?? null,
     language: properties.language.select?.name ?? null,
