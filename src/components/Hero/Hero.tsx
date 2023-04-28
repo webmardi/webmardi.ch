@@ -2,6 +2,7 @@ import React, { ReactElement } from 'react';
 import parse from 'react-html-parser';
 import { useTranslation } from 'react-i18next';
 import { closestIndexTo, endOfDay, isAfter, parseISO } from 'date-fns';
+import Link from 'next/link';
 import { isNil } from 'ramda';
 
 import Button from 'components/Button';
@@ -37,6 +38,7 @@ const Hero = ({ events }: Props): JSX.Element => {
     language,
     subscriptionLink,
     youtubeLink,
+    slug,
   } = futureEvents[nextEventId as unknown as number];
   const date = !isNil(rawDate) ? parseISO(rawDate) : '';
 
@@ -48,7 +50,20 @@ const Hero = ({ events }: Props): JSX.Element => {
     >
       <div className="px-4 py-10 mx-auto border-b md:py-28 max-w-7xl border-blue-lighter grid md:grid-cols-3 gap-12 md:gap-6">
         <div className="col-span-2">
-          {!isNil(title) && (
+          {!isNil(slug) && (
+            <Link
+              href={`/events/${encodeURIComponent(slug)}`}
+              className="hover:underline"
+            >
+              <h2
+                className="text-lg font-bold md:text-xl lg:text-2xl"
+                itemProp="name"
+              >
+                {title}
+              </h2>
+            </Link>
+          )}
+          {isNil(slug) && (
             <h2
               className="text-lg font-bold md:text-xl lg:text-2xl"
               itemProp="name"

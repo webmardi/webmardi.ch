@@ -3,6 +3,7 @@ import React, { ReactElement } from 'react';
 import parse from 'react-html-parser';
 import { useTranslation } from 'react-i18next';
 import { endOfDay, isAfter, parseISO } from 'date-fns';
+import Link from 'next/link';
 import { isEmpty, isNil } from 'ramda';
 
 import Button from 'components/Button';
@@ -25,7 +26,17 @@ const EventTeaser = ({ event }: Props): JSX.Element => {
       className="py-6 border-b grid sm:grid-cols-12 gap-6 border-blue"
     >
       <div className="sm:col-span-8 lg:col-span-5">
-        <h4 className="text-base font-bold md:text-lg">{event.title}</h4>
+        {!isNil(event.slug) && (
+          <Link
+            href={`/events/${encodeURIComponent(event.slug)}`}
+            className="hover:underline"
+          >
+            <h4 className="text-base font-bold md:text-lg">{event.title}</h4>
+          </Link>
+        )}
+        {isNil(event.slug) && (
+          <h4 className="text-base font-bold md:text-lg">{event.title}</h4>
+        )}
         <div className="mt-2 space-x-2">
           {event.types?.map(type => (
             <span
