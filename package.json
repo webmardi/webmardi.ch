@@ -2,7 +2,6 @@
   "name": "webmardi",
   "version": "1.2.5",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "clean": "rm -rf .next && rm -rf node_modules/.cache",
     "dev": "yarn run clean && next",
