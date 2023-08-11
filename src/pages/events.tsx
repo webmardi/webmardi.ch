@@ -25,6 +25,8 @@ const Home = ({ events }: Props): JSX.Element => {
 
   useEffect(() => {
     setYears(
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       groupBy(
         i => format(parseISO(i.date ?? ''), 'yyyy'),
         events
