@@ -51,12 +51,12 @@ const Sponsors = (): JSX.Element => {
                 as="a"
                 target="_blank"
                 rel="noopener"
-                href={t('homepage.sponsors.contact_us_link')}
+                href="/pdf/sponsoring_factsheet_2024.pdf"
                 itemProp="url"
                 scheme="blue"
                 className="mt-5 text-sm"
               >
-                {t('homepage.sponsors.contact_us')}
+                {t('homepage.sponsors.see_sponsoring_packages')}
               </Button>
             </div>
           </div>
