@@ -2,6 +2,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { SPONSORING_FACTSHEET_PDF } from 'assets/pdf/Pdf';
 import Button from 'components/Button';
 
 const Sponsors = (): JSX.Element => {
@@ -51,7 +52,7 @@ const Sponsors = (): JSX.Element => {
                 as="a"
                 target="_blank"
                 rel="noopener"
-                href="/pdf/sponsoring_factsheet_2024.pdf"
+                href={SPONSORING_FACTSHEET_PDF}
                 itemProp="url"
                 scheme="blue"
                 className="mt-5 text-sm"
