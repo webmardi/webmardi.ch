@@ -2,7 +2,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { SPONSORING_FACTSHEET_PDF } from 'assets/pdf/Pdf';
 import Button from 'components/Button';
 
 const Sponsors = (): JSX.Element => {
@@ -52,12 +51,12 @@ const Sponsors = (): JSX.Element => {
                 as="a"
                 target="_blank"
                 rel="noopener"
-                href={SPONSORING_FACTSHEET_PDF}
+                href={t('homepage.sponsors.sponsoring_packages_url')}
                 itemProp="url"
                 scheme="blue"
                 className="mt-5 text-sm"
               >
-                {t('homepage.sponsors.see_sponsoring_packages')}
+                {t('homepage.sponsors.sponsoring_packages')}
               </Button>
             </div>
           </div>
