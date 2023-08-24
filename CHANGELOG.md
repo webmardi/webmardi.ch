@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.8] - 2023-08-24
+### Changed
+- update all dependencies
+
 ## [1.2.7] - 2023-08-11
 ### Changed
 - update all dependencies
@@ -107,7 +111,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add Linkedin link
 - add GA script
 
-[Unreleased]: https://github.com/webmardi/webmardi.ch/compare/v1.2.7...HEAD
+[Unreleased]: https://github.com/webmardi/webmardi.ch/compare/v1.2.8...HEAD
+[1.2.8]: https://github.com/webmardi/webmardi.ch/compare/v1.2.7...v1.2.8
 [1.2.7]: https://github.com/webmardi/webmardi.ch/compare/v1.2.6...v1.2.7
 [1.2.6]: https://github.com/webmardi/webmardi.ch/compare/v1.2.5...v1.2.6
 [1.2.5]: https://github.com/webmardi/webmardi.ch/compare/v1.2.4...v1.2.5
