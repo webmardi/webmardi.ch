@@ -1,6 +1,6 @@
 {
   "name": "webmardi",
-  "version": "1.2.9",
+  "version": "1.2.10",
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf .next && rm -rf node_modules/.cache",
