@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Changed
-- sponsoring factsheet pdf
+- Update sponsoring factsheet pdf
 
 ## [1.2.9] - 2023-08-24
 ### Changed
