@@ -15,12 +15,12 @@ Webmardi is a static generated website based on [Next.js](https://nextjs.org/).
 First of all, you need to have the following tools installed globally on your environment:
 
 - [📗 NodeJS >= 14.4](https://nodejs.org/en/) - JavaScript runtime used to build and run the project
-- [🐈 Yarn >= 1.22](https://yarnpkg.com/lang/en/) - Dependency manager built on top of the NPM registry
+- [🥟 Bun >= 1.0.13](https://bun.sh/) - Dependency manager
 
 To install the project:
 
 ```bash
-yarn
+bun install -y
 
 cp .env.sample .env
 code .env
@@ -34,17 +34,17 @@ Those are the main commands to use:
 
 ```bash
 # Start dev mode
-yarn dev
+bun run dev
 
 # Start production mode
-yarn build
-yarn serve
+bun run build
+bun run serve
 
 # Clean project (remove .next directory)
-yarn clean
+bun run clean
 
 # Add new component
-npx generact
+bun x generact
 ```
 
 ### ⚠️ Linters
@@ -53,7 +53,7 @@ Thanks to [Husky](https://github.com/typicode/husky) and [lint-staged](https://g
 
 ```bash
 # Lint JavaScript
-yarn lint:js
+bun run lint:js
 ```
 
 ## Contribute
