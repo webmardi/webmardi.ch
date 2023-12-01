@@ -23,12 +23,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-      - name: Setup Node 18.x
-        uses: actions/setup-node@v1
+      - uses: oven-sh/setup-bun@v1
         with:
-          node-version: '18.x'
+          bun-version: latest
       - name: Build project
-        run: yarn install && yarn build
+        run: bun install -y && bun run build
       - name: Install SSH Key
         uses: shimataro/ssh-key-action@v2
         with:

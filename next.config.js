@@ -27,4 +27,5 @@ module.exports = withPWA({
   },
   env: {},
   compress: true,
+  output: 'export',
 });
