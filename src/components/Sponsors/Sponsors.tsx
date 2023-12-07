@@ -20,7 +20,7 @@ const Sponsors = (): JSX.Element => {
             href="https://liip.ch/"
             target="_blank"
             rel="noopener"
-            className="flex items-center justify-center h-40 lg:h-60 bg-blue-dark transition-colors md:hover:bg-blue-light"
+            className="flex items-center justify-center h-40 px-20 lg:h-60 bg-blue-dark transition-colors md:hover:bg-blue-light"
           >
             <img
               src="/vectors/liip.svg"
@@ -42,6 +42,34 @@ const Sponsors = (): JSX.Element => {
               className="w-auto"
               width="248"
               height="58"
+            />
+          </a>
+          <a
+            href="https://superhuit.ch/"
+            target="_blank"
+            rel="noopener"
+            className="flex items-center justify-center h-40 px-10 lg:h-60 bg-blue-dark transition-colors md:hover:bg-blue-light"
+          >
+            <img
+              src="/vectors/superhuit.svg"
+              alt="Superhuit"
+              className="w-auto"
+              width="147"
+              height="54"
+            />
+          </a>
+          <a
+            href="https://www.infomaniak.com/"
+            target="_blank"
+            rel="noopener"
+            className="flex items-center justify-center h-40 px-20 md:px-10 lg:h-60 bg-blue-dark transition-colors md:hover:bg-blue-light"
+          >
+            <img
+              src="/vectors/infomaniak.svg"
+              alt="Infomaniak"
+              className="w-auto"
+              width="147"
+              height="54"
             />
           </a>
           <div className="flex items-center justify-center h-40 lg:h-60 bg-blue-light">
