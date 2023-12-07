@@ -20,7 +20,7 @@ const Sponsors = (): JSX.Element => {
             href="https://liip.ch/"
             target="_blank"
             rel="noopener"
-            className="flex items-center justify-center h-40 px-20 lg:h-60 bg-blue-dark transition-colors md:hover:bg-blue-light"
+            className="flex items-center justify-center h-40 lg:h-60 bg-blue-dark transition-colors md:hover:bg-blue-light"
           >
             <img
               src="/vectors/liip.svg"
