@@ -1,4 +1,4 @@
-import { format } from 'date-fns';
+import { format, FormatOptions, Locale } from 'date-fns';
 import { enGB, frCH } from 'date-fns/locale';
 import { type } from 'ramda';
 
@@ -12,12 +12,7 @@ const supportedLocale: Record<string, Locale> = {
 const formatDateI18n = (
   date: Date | string,
   frmt: string,
-  options?: {
-    weekStartsOn?: 0 | 1 | 2 | 3 | 4 | 5 | 6;
-    firstWeekContainsDate?: number;
-    useAdditionalWeekYearTokens?: boolean;
-    useAdditionalDayOfYearTokens?: boolean;
-  }
+  options?: FormatOptions
 ): string => {
   const inputDate = type(date) === 'String' ? new Date(date) : (date as Date);
 
