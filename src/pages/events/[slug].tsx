@@ -34,7 +34,7 @@ const Home = ({ event }: Props): JSX.Element => {
         >
           {event.title}
         </h1>
-        {(!isNil(event.subscriptionLink) || !isNil(event.subscriptionLink)) && (
+        {(!isNil(event.subscriptionLink) || !isNil(event.youtubeLink)) && (
           <div className="flex flex-wrap items-center mt-12 gap-x-8 gap-y-8">
             {!isNil(event.subscriptionLink) && (
               <Button
