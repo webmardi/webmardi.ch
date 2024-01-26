@@ -19,9 +19,7 @@ const Home = ({ event }: Props): JSX.Element => {
 
   return (
     <Layout>
-      <SEO />
-      <h1 className="sr-only">{t('homepage.events.title')}</h1>
-
+      <SEO title={event.title as string} />
       <main
         className="max-w-3xl px-4 mx-auto my-20"
         itemScope
@@ -46,7 +44,7 @@ const Home = ({ event }: Props): JSX.Element => {
               itemScope
               itemProp="performer"
               itemType="https://schema.org/Person"
-              className="flex items-baseline link space-x-4"
+              className="flex items-baseline space-x-4 link"
             >
               <h3 className="font-bold">{t('event.speaker')}</h3>
               {!isNil(event.speakerName) && isNil(event.speakerLink) && (
