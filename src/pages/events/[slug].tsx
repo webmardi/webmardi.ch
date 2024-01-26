@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { isNil } from 'ramda';
 
+import Button from 'components/Button';
 import Layout from 'components/Layout';
 import SEO from 'components/SEO';
 import Sponsors from 'components/Sponsors';
@@ -33,6 +34,37 @@ const Home = ({ event }: Props): JSX.Element => {
         >
           {event.title}
         </h1>
+        {(!isNil(event.subscriptionLink) || !isNil(event.youtubeLink)) && (
+          <div className="flex flex-wrap items-center mt-12 gap-x-8 gap-y-8">
+            {!isNil(event.subscriptionLink) && (
+              <Button
+                as="a"
+                target="_blank"
+                rel="noopener"
+                href={event.subscriptionLink}
+                itemProp="url"
+                size="lg"
+                scheme="cyan"
+              >
+                {t('hero.register')}
+              </Button>
+            )}
+            {!isNil(event.youtubeLink) && (
+              <Button
+                as="a"
+                target="_blank"
+                rel="noopener"
+                href={event.youtubeLink}
+                itemProp="url"
+                size="lg"
+                scheme="outline"
+                iconRight="youtube"
+              >
+                {t('hero.live')}
+              </Button>
+            )}
+          </div>
+        )}
         <p className="mt-12">
           {
             parse(
@@ -110,9 +142,7 @@ const Home = ({ event }: Props): JSX.Element => {
             </div>
           )}
         </div>
-
         <p className="mt-8">{t('event.youtube')}</p>
-
         <p className="mt-8">
           {
             parse(

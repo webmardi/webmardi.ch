@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+- Meetup and Youtube links to event page
 - Fix /events page redirection
 
 ## [1.3.3] - 2024-01-12
@@ -147,6 +148,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add GA script
 
 [Unreleased]: https://github.com/webmardi/webmardi.ch/compare/v1.3.3...HEAD
+[1.3.4]: https://github.com/webmardi/webmardi.ch/compare/v1.3.3...v1.3.4
 [1.3.3]: https://github.com/webmardi/webmardi.ch/compare/v1.3.2...v1.3.3
 [1.3.2]: https://github.com/webmardi/webmardi.ch/compare/v1.3.1...v1.3.2
 [1.3.1]: https://github.com/webmardi/webmardi.ch/compare/v1.3.0...v1.3.1
