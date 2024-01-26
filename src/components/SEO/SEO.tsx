@@ -19,7 +19,7 @@ const SEO = ({ title, imageUrl, description }: Props): JSX.Element => {
     <Head>
       <link rel="canonical" href={`${host}${asPath}`} />
 
-      <title>{title ?? t('seo.title')}</title>
+      <title>{`${title} - ${t('seo.title')}` ?? t('seo.title')}</title>
 
       <meta property="og:title" content={title ?? t('seo.title')} />
       <meta property="og:type" content="website" />

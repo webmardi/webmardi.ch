@@ -44,12 +44,12 @@ const Home = ({ events }: Props): JSX.Element => {
 
   return (
     <Layout>
-      <SEO />
+      <SEO title={t('homepage.events.title')} />
       <h1 className="sr-only">{t('homepage.events.title')}</h1>
 
       <main className="px-4 mx-auto mb-20 max-w-7xl">
         <section>
-          <div className="mt-12 md:grid grid-cols-2 gap-6">
+          <div className="mt-12 grid-cols-2 gap-6 md:grid">
             <h2
               className="text-xl font-bold col-span-2 md:text-xl lg:text-2xl"
               itemProp="name"
