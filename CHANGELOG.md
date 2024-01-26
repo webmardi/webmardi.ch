@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Meetup and Youtube links to event page
 - Fix /events page redirection
 
+### Changed
+- Improve page titles
+
 ## [1.3.3] - 2024-01-12
 ### Changed
 - Update all dependencies
