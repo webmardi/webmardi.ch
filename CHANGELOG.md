@@ -5,6 +5,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Fixed
+- Fix 403 on events #87
+
+### Changed
+- Update all dependencies
 
 ## [1.3.4] - 2024-01-26
 ### Added
