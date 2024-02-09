@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import { isNotNil } from 'ramda';
 
 type Props = {
   title?: string;
@@ -19,7 +20,9 @@ const SEO = ({ title, imageUrl, description }: Props): JSX.Element => {
     <Head>
       <link rel="canonical" href={`${host}${asPath}`} />
 
-      <title>{`${title} - ${t('seo.title')}` ?? t('seo.title')}</title>
+      <title>
+        {isNotNil(title) ? `${title} - ${t('seo.title')}` : t('seo.title')}
+      </title>
 
       <meta property="og:title" content={title ?? t('seo.title')} />
       <meta property="og:type" content="website" />
