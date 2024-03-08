@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.4.2] - 2024-03-08
+### Changed
+- Update all dependencies
+
 ## [1.4.1] - 2024-02-09
 ### Fixed
 - Fix undefined homepage title #108
@@ -163,7 +167,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add Linkedin link
 - add GA script
 
-[Unreleased]: https://github.com/webmardi/webmardi.ch/compare/v1.4.1...HEAD
+[Unreleased]: https://github.com/webmardi/webmardi.ch/compare/v1.4.2...HEAD
+[1.4.2]: https://github.com/webmardi/webmardi.ch/compare/v1.4.1...v1.4.2
 [1.4.1]: https://github.com/webmardi/webmardi.ch/compare/v1.4.0...v1.4.1
 [1.4.0]: https://github.com/webmardi/webmardi.ch/compare/v1.3.4...v1.4.0
 [1.3.4]: https://github.com/webmardi/webmardi.ch/compare/v1.3.3...v1.3.4
