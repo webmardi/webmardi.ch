@@ -1,0 +1,45 @@
+---
+import { isNotNil } from 'ramda';
+
+import Icon from '@/components/Icon.astro';
+import { IconNames } from '@/types';
+import { cm } from '@/utils';
+
+type Props = {
+  scheme?: 'outline' | 'blue' | 'cyan';
+  size?: 'base' | 'lg';
+  iconLeft?: IconNames;
+  iconRight?: IconNames;
+  className?: string;
+  // eslint-disable-next-line
+  [x: string]: any;
+};
+
+const {
+  scheme = 'outline',
+  size = 'base',
+  iconLeft,
+  iconRight,
+  ...props
+}: Props = Astro.props;
+---
+
+<a
+  class={cm(
+    props?.className,
+    'inline-block font-bold transition-colors whitespace-nowrap',
+    size === 'lg' && 'px-4 py-2 lg:px-8 lg:py-3 lg:text-xl text-lg',
+    size === 'base' && 'px-4 py-2',
+    scheme === 'outline' &&
+      'border border-blue md:hover:bg-blue text-blue md:hover:text-white hover:border-white focus:bg-blue-dark focus:text-white bg-white',
+    scheme === 'cyan' &&
+      'border border-cyan md:hover:border-blue md:hover:bg-white bg-cyan text-blue focus:text-blue-dark md:hover:text-blue-lighter',
+    scheme === 'blue' &&
+      'border border-blue md:hover:border-cyan md:hover:bg-cyan focus:bg-cyan bg-blue text-white focus:text-blue-dark md:hover:text-blue'
+  )}
+  {...props}
+>
+  {isNotNil(iconLeft) && <Icon name={iconLeft} className="mr-3 text-lg" />}
+  <slot />
+  {isNotNil(iconRight) && <Icon name={iconRight} className="ml-3 text-lg" />}
+</a>

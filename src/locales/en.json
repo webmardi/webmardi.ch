@@ -1,0 +1,80 @@
+{
+  "header": {
+    "logo": "Webmardi logotype",
+    "follow_us": "Don’t be shy, follow us"
+  },
+  "footer": {
+    "newsletter": {
+      "title": "Newsletter",
+      "info": "Sign up to be informed about upcoming events.",
+      "email": "E-mail",
+      "subscribe": "Subscribe",
+      "success": "Thank you for your subscription! Don't forget to confirm your Email.",
+      "error": "Something went wrong. Please try again later."
+    },
+    "speaker": {
+      "title": "Be a speaker",
+      "info": "Let your voice be heard at our events and beyond.",
+      "contact_us": "Contact us",
+      "contact_us_link": "mailto:contact@webmardi.ch",
+      "submit_paper": "Submit your paper",
+      "submit_paper_link": "https://bit.ly/webmardi-talk"
+    },
+    "made_by": "Dev by <a href=\"https://yago.io/\" target=\"_blank\" rel=\"noreferrer\">Yago</a> & Design by <a href=\"http://www.nerval.ch/\" target=\"_blank\" rel=\"noreferrer\">Pierre</a>"
+  },
+  "hero": {
+    "register": "Register",
+    "live": "Livestream"
+  },
+  "homepage": {
+    "title": "Webmardi",
+    "about": {
+      "title": "Who we are?",
+      "content": "Webmardi is a Swiss-based association that organises free monthly events in western Switzerland. We offer the opportunity for people to meet their local community and bring together developers, designers, project owners, founders & many more.",
+      "follow_us": "Follow us",
+      "instagram_link": "https://www.instagram.com/webmardi"
+    },
+    "events": {
+      "title": "Events",
+      "content": "Let us know if you would like to <a href=\"https://bit.ly/webmardi-talk\" target=\"_blank\" rel=\"noopener\">speak at webmardi</a> or a topic you would like <a href=\"https://bit.ly/webmardi-wishes\" target=\"_blank\" rel=\"noopener\">hear about</a>.",
+      "view_on_meetup": "View on Meetup",
+      "meetup_link": "https://www.meetup.com/webmardi/",
+      "upcoming": "Upcoming",
+      "past": "Past",
+      "search": "Search...",
+      "subscribe": "Subscribe",
+      "replay": "Replay",
+      "live": "Livestream",
+      "apply": "Apply",
+      "apply_desc": "Drop us your talk proposal for this open slot ! We will be honoured to organise a Webmardi with you <3",
+      "types": {
+        "special_event": "Special event",
+        "technical": "Technical",
+        "design": "Design",
+        "for_everyone": "For everyone"
+      },
+      "view_more": "View more"
+    },
+    "sponsors": {
+      "title": "Our amazing sponsors",
+      "content": "Thanks to our sponsors who help making these events happening and offering you beers.",
+      "support_us": "Do you wish to support us ?",
+      "contact_us": "Contact us",
+      "sponsoring_packages": "See sponsoring packages",
+      "sponsoring_packages_url": "/pdf/sponsoring_factsheet_2024.pdf",
+      "contact_us_link": "https://docs.google.com/document/d/1qjxg6l_nQ_ycgYwJAdXWSEqmB5D8uoWNs-hEtrO_stw/edit?usp=sharing"
+    }
+  },
+  "event": {
+    "speaker": "Speaker:",
+    "lang": "Language:",
+    "be_held": "Will be held in ",
+    "who": "Accessible:",
+    "where": "Location:",
+    "youtube": "If you can't make it, the event will be available on Youtube afterwards.\nThanks to our wonderful premium sponsors @superhuit, @liip_ch, @infomaniak & @HidoraSwiss who help us make these journey possible \uD83D\uDE42"
+  },
+  "seo": {
+    "title": "Webmardi - Monthly events in western Switzerland",
+    "description": "Webmardi is a Swiss-based association that organises free monthly events in western Switzerland."
+  }
+}

@@ -1,0 +1,182 @@
+---
+import { endOfDay, isAfter, parseISO } from 'date-fns';
+import { isEmpty, isNil, isNotNil } from 'ramda';
+import slugify from 'slugify';
+
+import Button from '@/components/Button.astro';
+import Icon from '@/components/Icon.astro';
+import { t } from '@/locales';
+import { Event, IconNames } from '@/types';
+import { formatDate, getLangName } from '@/utils';
+
+type Props = {
+  event: Event;
+};
+
+const { event }: Props = Astro.props;
+---
+
+<li
+  itemscope
+  itemtype="https://schema.org/Event"
+  data-slug={slugify(event.title ?? '', { lower: true })}
+  class="py-6 border-b grid gap-6 event-teaser sm:grid-cols-12 border-blue"
+>
+  <div class="sm:col-span-8 lg:col-span-5">
+    {
+      isNotNil(event.slug) && (
+        <a
+          href={`/events/${encodeURIComponent(event.slug)}`}
+          class="hover:underline"
+        >
+          <h4 class="text-base font-bold md:text-lg">{event.title}</h4>
+        </a>
+      )
+    }
+    {
+      isNil(event.slug) && (
+        <h4 class="text-base font-bold md:text-lg">{event.title}</h4>
+      )
+    }
+    <div class="mt-2 space-x-2">
+      {
+        event.types?.map(type => (
+          <span class="text-xs uppercase border px-1.5 py-0.5 border-blue">
+            <Icon name={type as IconNames} className="text-xs mr-0.5" />
+            {t(`homepage.events.types.${type}`)}
+          </span>
+        ))
+      }
+    </div>
+  </div>
+  <div class="sm:order-first sm:col-span-4 lg:col-span-2">
+    {
+      isNotNil(event.date) && (
+        <time
+          class="block text-base font-bold md:text-lg"
+          datetime={formatDate(event.date, 'yyyy-MM-dd')}
+          itemprop="startDate"
+        >
+          {formatDate(event.date, 'd MMMM')}
+        </time>
+      )
+    }
+    {
+      isNotNil(event.date) && (
+        <time
+          class="block mt-2 text-sm"
+          datetime={formatDate(event.date, 'HH:mm')}
+          itemprop="startDate"
+        >
+          {formatDate(event.date, 'HH:mm')}
+        </time>
+      )
+    }
+    {
+      isNotNil(event.location) && (
+        <p class="text-sm" itemprop="location" set:html={event.location} />
+      )
+    }
+    {
+      isNotNil(event.language) && (
+        <p class="text-sm" itemprop="inLanguage">
+          {getLangName(event.language)}
+        </p>
+      )
+    }
+  </div>
+  {
+    isNil(event.applyLink) && (
+      <div
+        itemscope
+        itemprop="performer"
+        itemtype="https://schema.org/Person"
+        class="sm:col-span-8 lg:col-span-3 link"
+      >
+        {isNotNil(event.speakerName) && isNil(event.speakerLink) && (
+          <p class="text-sm" itemprop="name" set:html={event.speakerName} />
+        )}
+        {isNotNil(event.speakerName) && isNotNil(event.speakerLink) && (
+          <a
+            href={event.speakerLink}
+            target="_blank"
+            class="text-sm"
+            itemprop="name"
+            rel="noopener noreferrer"
+            set:html={event.speakerName}
+          />
+        )}
+        {isNotNil(event.speakerJob) && (
+          <p
+            itemprop="jobTitle"
+            class="mt-1 text-sm"
+            set:html={event.speakerJob}
+          />
+        )}
+      </div>
+    )
+  }
+  {
+    isNotNil(event.applyLink) && (
+      <p class="text-sm sm:col-span-8 lg:col-span-3">
+        {t('homepage.events.apply_desc')}
+      </p>
+    )
+  }
+  <div
+    class="flex flex-wrap items-center gap-1 sm:justify-end sm:col-span-4 lg:col-span-2"
+  >
+    {
+      isNotNil(event.youtubeLink) && !isEmpty(event.youtubeLink) && (
+        <Button
+          as="a"
+          target="_blank"
+          rel="noopener"
+          href={event.youtubeLink}
+          itemprop="url"
+          scheme="outline"
+          iconRight="youtube"
+        >
+          {isNotNil(event.date) &&
+          isAfter(endOfDay(parseISO(event.date)), new Date())
+            ? t('homepage.events.live')
+            : t('homepage.events.replay')}
+        </Button>
+      )
+    }
+    {
+      isNotNil(event.subscriptionLink) &&
+        !isEmpty(event.subscriptionLink) &&
+        isNil(event.applyLink) &&
+        isNotNil(event.date) &&
+        isAfter(parseISO(event.date), new Date()) && (
+          <Button
+            as="a"
+            target="_blank"
+            rel="noopener"
+            href={event.subscriptionLink}
+            itemprop="url"
+            scheme="blue"
+          >
+            {t('homepage.events.subscribe')}
+          </Button>
+        )
+    }
+    {
+      isNotNil(event.applyLink) &&
+        !isEmpty(event.applyLink) &&
+        isNotNil(event.date) &&
+        isAfter(parseISO(event.date), new Date()) && (
+          <Button
+            target="_blank"
+            rel="noopener"
+            href={event.applyLink}
+            itemprop="url"
+            scheme="blue"
+          >
+            {t('homepage.events.apply')}
+          </Button>
+        )
+    }
+  </div>
+</li>

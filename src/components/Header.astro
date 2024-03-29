@@ -1,0 +1,68 @@
+---
+import Icon from '@/components/Icon.astro';
+import { t } from '@/locales';
+import { IconNames } from '@/types';
+
+const socials: { url: string; icon: IconNames }[] = [
+  {
+    url: 'https://www.facebook.com/webmardi',
+    icon: 'facebook',
+  },
+  {
+    url: 'https://www.twitter.com/webmardi',
+    icon: 'twitter',
+  },
+  {
+    url: 'https://tooting.ch/@webmardi',
+    icon: 'mastodon',
+  },
+  {
+    url: 'https://www.youtube.com/webmardi',
+    icon: 'youtube',
+  },
+  {
+    url: 'https://www.instagram.com/webmardi',
+    icon: 'instagram',
+  },
+  {
+    url: 'https://www.linkedin.com/company/webmardi',
+    icon: 'linkedin',
+  },
+];
+---
+
+<header class="text-white bg-blue">
+  <div
+    class="px-4 py-4 mx-auto border-b md:py-10 max-w-7xl border-blue-lighter"
+  >
+    <div class="items-center justify-between md:flex space-y-4 md:space-y-0">
+      <a href="/">
+        <img
+          src="/vectors/logo.svg"
+          alt={t('header.logo')}
+          class="w-1/3 md:w-auto"
+          width="207"
+          height="33"
+        />
+      </a>
+      <p class="flex flex-col sm:flex-row sm:items-center">
+        {t('header.follow_us')}
+        <span class="text-lg sm:pl-8 md:text-xl space-x-4 md:space-x-6">
+          {
+            socials.map(({ url, icon }) => (
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-block focus:text-cyan transition-colors md:hover:motion-safe:animate-bounce"
+              >
+                <Icon name={icon} />
+                <span class="sr-only">{icon}</span>
+              </a>
+            ))
+          }
+        </span>
+      </p>
+    </div>
+  </div>
+</header>

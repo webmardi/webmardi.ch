@@ -1,0 +1,153 @@
+---
+import { closestIndexTo, endOfDay, isAfter, parseISO } from 'date-fns';
+import { isNil, isNotNil } from 'ramda';
+
+import Button from '@/components/Button.astro';
+import { t } from '@/locales';
+import { Event } from '@/types';
+import { formatDate, getLangName } from '@/utils';
+
+type Props = {
+  events: Event[];
+};
+
+const { events }: Props = Astro.props;
+
+const futureEvents = events.filter(
+  i => isNotNil(i.date) && isAfter(endOfDay(parseISO(i.date)), new Date())
+);
+const nextEventId = closestIndexTo(
+  new Date(),
+  futureEvents.map(i => parseISO(i.date ?? ''))
+);
+
+const {
+  title,
+  date: rawDate,
+  speakerName,
+  speakerJob,
+  location,
+  language,
+  subscriptionLink,
+  youtubeLink,
+  slug,
+} = futureEvents[nextEventId as unknown as number];
+const date = isNotNil(rawDate) ? parseISO(rawDate) : '';
+---
+
+<section
+  class="text-white bg-blue"
+  itemscope
+  itemtype="https://schema.org/Event"
+>
+  <div
+    class="px-4 py-10 mx-auto border-b grid gap-12 md:py-28 max-w-7xl border-blue-lighter md:grid-cols-3 md:gap-6"
+  >
+    <div class="col-span-2">
+      {
+        isNotNil(slug) && (
+          <a
+            href={`/events/${encodeURIComponent(slug)}`}
+            class="hover:underline"
+          >
+            <h2
+              class="text-lg font-bold md:text-xl lg:text-2xl"
+              itemprop="name"
+            >
+              {title}
+            </h2>
+          </a>
+        )
+      }
+      {
+        isNil(slug) && (
+          <h2 class="text-lg font-bold md:text-xl lg:text-2xl" itemprop="name">
+            {title}
+          </h2>
+        )
+      }
+      <div class="flex flex-wrap items-center gap-x-8">
+        {
+          isNotNil(subscriptionLink) && (
+            <div class="mt-8 lg:mt-14">
+              <Button
+                target="_blank"
+                rel="noopener"
+                href={subscriptionLink}
+                itemprop="url"
+                size="lg"
+                scheme="cyan"
+              >
+                {t('hero.register')}
+              </Button>
+            </div>
+          )
+        }
+        {
+          isNotNil(youtubeLink) && (
+            <div class="mt-8 lg:mt-14">
+              <Button
+                as="a"
+                target="_blank"
+                rel="noopener"
+                href={youtubeLink}
+                itemprop="url"
+                size="lg"
+                scheme="outline"
+                iconRight="youtube"
+              >
+                {t('hero.live')}
+              </Button>
+            </div>
+          )
+        }
+      </div>
+    </div>
+    <div class="md:order-first">
+      {
+        isNotNil(date) && (
+          <time
+            class="block text-lg font-bold md:text-xl text-cyan"
+            datetime={formatDate(date, 'yyyy-MM-dd')}
+            itemprop="startDate"
+          >
+            {formatDate(date, 'd MMMM')}
+          </time>
+        )
+      }
+      {
+        isNotNil(date) && (
+          <time
+            class="block mt-2"
+            datetime={formatDate(date, 'HH:mm')}
+            itemprop="startDate"
+          >
+            {formatDate(date, 'HH:mm')}
+          </time>
+        )
+      }
+      {isNotNil(location) && <p itemprop="location" set:html={location} />}
+      {
+        isNotNil(language) && (
+          <p itemprop="inLanguage">{getLangName(language)}</p>
+        )
+      }
+      <div itemscope itemprop="performer" itemtype="https://schema.org/Person">
+        {
+          isNotNil(speakerName) && (
+            <p
+              class="mt-10 text-lg font-bold md:text-xl text-cyan"
+              itemprop="name"
+              set:html={speakerName}
+            />
+          )
+        }
+        {
+          isNotNil(speakerJob) && (
+            <p itemprop="jobTitle" class="mt-2" set:html={speakerJob} />
+          )
+        }
+      </div>
+    </div>
+  </div>
+</section>

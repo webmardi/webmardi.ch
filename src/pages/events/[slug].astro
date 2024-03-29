@@ -1,0 +1,142 @@
+---
+import { isNotNil, isNil } from 'ramda';
+
+import Button from '@/components/Button.astro';
+import Sponsors from '@/components/Sponsors.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { Event } from '@/types';
+import { t } from '@/locales';
+import { getEvents, getLangName } from '@/utils';
+
+export async function getStaticPaths() {
+  const events: Event[] = await getEvents();
+  return events
+    .filter((i) => isNotNil(i.slug))
+    .map((event) => ({
+      params: { slug: event.slug },
+      props: { event },
+    }));
+}
+
+const { event } = Astro.props;
+---
+
+<BaseLayout title={event.title as string}>
+  <main
+    class="max-w-3xl px-4 mx-auto my-20"
+    itemscope
+    itemtype="https://schema.org/Event"
+  >
+    <h1
+      class="col-span-2 text-xl font-bold md:text-xl lg:text-2xl"
+      itemprop="name"
+    >
+      {event.title}
+    </h1>
+    {
+      (isNotNil(event.subscriptionLink) || isNotNil(event.youtubeLink)) && (
+        <div class="flex flex-wrap items-center mt-12 gap-x-8 gap-y-8">
+          {isNotNil(event.subscriptionLink) && (
+            <Button
+              as="a"
+              target="_blank"
+              rel="noopener"
+              href={event.subscriptionLink}
+              itemprop="url"
+              size="lg"
+              scheme="cyan"
+            >
+              {t('hero.register')}
+            </Button>
+          )}
+          {isNotNil(event.youtubeLink) && (
+            <Button
+              as="a"
+              target="_blank"
+              rel="noopener"
+              href={event.youtubeLink}
+              itemprop="url"
+              size="lg"
+              scheme="outline"
+              iconRight="youtube"
+            >
+              {t('hero.live')}
+            </Button>
+          )}
+        </div>
+      )
+    }
+    <p class="mt-12" set:html={event.seoBody.replace(/\n/gm, '<br /><br />')} />
+    <div class="mt-8 space-y-2">
+      {
+        isNotNil(event.speakerName) && (
+          <div
+            itemscope
+            itemprop="performer"
+            itemtype="https://schema.org/Person"
+            class="flex items-baseline space-x-4 link"
+          >
+            <h3 class="font-bold">{t('event.speaker')}</h3>
+            {isNotNil(event.speakerName) && isNil(event.speakerLink) && (
+              <span set:html={event.speakerName} itemprop="name" />
+            )}
+            {isNotNil(event.speakerName) && isNotNil(event.speakerLink) && (
+              <a
+                href={event.speakerLink}
+                target="_blank"
+                itemprop="name"
+                rel="noopener noreferrer"
+                set:html={event.speakerName}
+              />
+            )}
+            {isNotNil(event.speakerJob) && (
+              <span
+                set:html={event.speakerJob}
+                itemprop="jobTitle"
+                class="mt-1"
+              />
+            )}
+          </div>
+        )
+      }
+      {
+        isNotNil(event.language) && (
+          <div itemprop="inLanguage" class="flex items-baseline space-x-4">
+            <h3 class="font-bold">{t('event.lang')}</h3>
+            <p>
+              {t('event.be_held')}
+              {getLangName(event.language)}
+            </p>
+          </div>
+        )
+      }
+      {
+        isNotNil(event.types) && (
+          <div itemprop="inLanguage" class="flex items-baseline space-x-4">
+            <h3 class="font-bold">{t('event.who')}</h3>
+            <p>
+              {event.types?.map((type) => (
+                <span>{t(`homepage.events.types.${type}`)}</span>
+              ))}
+            </p>
+          </div>
+        )
+      }
+      {
+        isNotNil(event.location) && (
+          <div itemprop="inLanguage" class="flex items-baseline space-x-4">
+            <h3 class="font-bold">{t('event.where')}</h3>
+            <p itemprop="location" set:html={event.location} />
+          </div>
+        )
+      }
+    </div>
+    <p class="mt-8">{t('event.youtube')}</p>
+    <p
+      class="mt-8"
+      set:html={event.seoHashtags.replace(/\n/gm, '<br /><br />')}
+    />
+  </main>
+
+  <Sponsors />
+</BaseLayout>

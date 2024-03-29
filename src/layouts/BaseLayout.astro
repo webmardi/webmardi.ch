@@ -1,0 +1,97 @@
+---
+import { isNotNil } from 'ramda';
+
+import Footer from '@/components/Footer.astro';
+import Header from '@/components/Header.astro';
+import { t } from '@/locales';
+
+import '@/styles/base.css';
+import '@/assets/css/fonts.css';
+
+type Props = {
+  title?: string;
+  description?: string;
+  imageUrl?: string;
+};
+
+const { title, description, imageUrl }: Props = Astro.props;
+const host = 'https://webmardi.ch';
+const asPath = Astro.url.pathname;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={`${host}${asPath}`} />
+
+    <title>
+      {isNotNil(title) ? `${title} - ${t('seo.title')}` : t('seo.title')}
+    </title>
+
+    <meta property="og:title" content={title ?? t('seo.title')} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={`${host}${asPath}`} />
+
+    <meta name="description" content={description ?? t('seo.description')} />
+    <meta
+      property="og:description"
+      content={description ?? t('seo.description')}
+    />
+
+    <meta
+      property="og:image"
+      content={imageUrl ?? `${host}/images/jpeg/og-image.jpg`}
+    />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#2525a5" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#2525a5" />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-158849142-1" />
+
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'UA-158849142-1');
+      gtag('config', 'AW-10892936528');
+      gtag('event', 'conversion', {
+        send_to: 'AW-10892936528/pqsWCOD8grgDENCKlMoo',
+      });
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PZVCNZ6D5"
+     />
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-4PZVCNZ6D5');
+    </script>
+  </head>
+  <body
+    class="overflow-x-hidden font-sans text-sm antialiased font-medium md:text-base text-blue"
+  >
+    <Header />
+    <slot />
+    <Footer />
+  </body>
+</html>

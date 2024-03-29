@@ -1,0 +1,114 @@
+---
+import { endOfDay, isAfter, isBefore, parseISO } from 'date-fns';
+import { isNotNil } from 'ramda';
+
+import Button from '@/components/Button.astro';
+import Carousel from '@/components/Carousel.astro';
+import EventTeaser from '@/components/EventTeaser.astro';
+import Hero from '@/components/Hero.astro';
+import Sponsors from '@/components/Sponsors.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { t } from '@/locales';
+import { getEvents } from '@/utils';
+
+const events = await getEvents();
+
+const futureEvents = events
+  .filter(
+    i => isNotNil(i.date) && isAfter(endOfDay(parseISO(i.date)), new Date())
+  )
+  .sort((a, b) =>
+    isAfter(parseISO(b.date ?? ''), parseISO(a.date ?? '')) ? -1 : 1
+  );
+
+const pastEvents = events
+  .filter(
+    i => isNotNil(i.date) && isBefore(endOfDay(parseISO(i.date)), new Date())
+  )
+  .sort((a, b) =>
+    isAfter(parseISO(b.date ?? ''), parseISO(a.date ?? '')) ? 1 : -1
+  );
+---
+
+<BaseLayout>
+  <Hero events={events} />
+
+  <main class="px-4 mx-auto mb-20 max-w-7xl">
+    <section>
+      <div class="mt-12 grid-cols-2 gap-6 md:mt-28 md:grid">
+        <h1
+          class="text-xl font-bold col-span-2 md:text-xl lg:text-2xl"
+          itemprop="name"
+        >
+          {t('homepage.about.title')}
+        </h1>
+        <p class="mt-2">{t('homepage.about.content')}</p>
+        <div class="mt-6 md:text-right md:mt-0">
+          <Button
+            as="a"
+            target="_blank"
+            rel="noopener"
+            href={t('homepage.about.instagram_link')}
+            itemprop="url"
+            iconRight="instagram"
+          >
+            {t('homepage.about.follow_us')}
+          </Button>
+        </div>
+      </div>
+
+      <div class="mt-14">
+        <Carousel />
+      </div>
+    </section>
+
+    <section>
+      <div class="mt-12 grid-cols-2 gap-6 md:mt-28 md:grid">
+        <h2
+          class="text-xl font-bold col-span-2 md:text-xl lg:text-2xl"
+          itemprop="name"
+        >
+          {t('homepage.events.title')}
+        </h2>
+        <p class="mt-2 link" set:html={t('homepage.events.content')} />
+        <div class="mt-6 md:text-right md:mt-0">
+          <Button
+            as="a"
+            target="_blank"
+            rel="noopener"
+            href={t('homepage.events.meetup_link')}
+            itemprop="url"
+          >
+            {t('homepage.events.view_on_meetup')}
+          </Button>
+        </div>
+      </div>
+
+      <h3
+        class="pb-6 mt-10 text-lg font-bold border-b-4 md:text-xl border-blue"
+      >
+        {t('homepage.events.upcoming')}
+      </h3>
+
+      <ul>
+        {futureEvents.map(event => <EventTeaser event={event} />)}
+      </ul>
+
+      <h3
+        class="pb-6 mt-16 text-lg font-bold border-b-4 md:text-xl border-blue"
+      >
+        {t('homepage.events.past')}
+      </h3>
+
+      <ul>
+        {pastEvents.slice(0, 2).map(event => <EventTeaser event={event} />)}
+      </ul>
+
+      <Button className="mt-8" href="/events">
+        {t('homepage.events.view_more')}
+      </Button>
+    </section>
+  </main>
+
+  <Sponsors />
+</BaseLayout>

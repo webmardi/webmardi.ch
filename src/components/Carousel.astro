@@ -1,0 +1,33 @@
+---
+import { range } from 'ramda';
+const width = 415;
+---
+<div class="inline-flex overflow-x-scroll carousel">
+  {range(1, 7).map(i => (
+    <div class="box-content flex flex-none snap-start">
+      <picture
+        id={`carousel-item-${i}`}
+        style={{ width, height: width }}
+      >
+        <source srcset={`/images/webp/Webmardi-${i}.webp`} type="image/webp" />
+        <source srcset={`/images/jpeg/Webmardi-${i}.jpeg`} type="image/jpeg" />
+        <img
+          src={`/images/jpeg/Webmardi-${i}.jpeg`}
+          alt="Webmardi moments"
+          loading="lazy"
+          width={width}
+          height={width}
+        />
+      </picture>
+    </div>
+  ))}
+</div>
+
+<style>
+  .carousel {
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
