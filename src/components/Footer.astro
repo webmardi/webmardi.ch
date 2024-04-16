@@ -13,7 +13,7 @@ import { formatDate } from '@/utils';
       <p class="mt-4 md:mt-7">{t('footer.newsletter.info')}</p>
         <!-- action="http://localhost:3000" -->
       <form
-      action="https://webmardi.us3.list-manage.com/subscribe/post-json?u=7d8f67d1605a1d4858b9a8c32&amp;id=27d71f62b4"
+      action="https://webmardi.us3.list-manage.com/subscribe/post-json?u=7d8f67d1605a1d4858b9a8c32&amp;id=27d71f62b4&amp;f_id=003e49e2f0"
         method="post"
         id="newsletter-form"
         name="mc-embedded-subscribe-form"
@@ -116,7 +116,7 @@ import { formatDate } from '@/utils';
       const { email, name } = Object.fromEntries(formData.entries());
 
       if (isEmpty(name) && !isEmpty(email)) {
-        const params = queryString.stringify({ email, 'b_7d8f67d1605a1d4858b9a8c32_27d71f62b4': '' });
+        const params = queryString.stringify({ EMAIL: email, 'b_7d8f67d1605a1d4858b9a8c32_27d71f62b4': '' });
         const path = newsletterForm.action + "&" + params;
         jsonp(
           path,
