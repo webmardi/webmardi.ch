@@ -63,12 +63,8 @@ const { event }: Props = Astro.props;
     }
     {
       isNotNil(event.date) && (
-        <time
-          class="block mt-2 text-sm"
-          datetime={formatDate(event.date, 'HH:mm')}
-          itemprop="startDate"
-        >
-          {formatDate(event.date, 'HH:mm')}
+        <time class="block mt-2 text-sm" datetime="19:00" itemprop="startDate">
+          19:00
         </time>
       )
     }
