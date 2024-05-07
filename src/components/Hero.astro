@@ -117,12 +117,8 @@ const date = isNotNil(rawDate) ? parseISO(rawDate) : '';
       }
       {
         isNotNil(date) && (
-          <time
-            class="block mt-2"
-            datetime={formatDate(date, 'HH:mm')}
-            itemprop="startDate"
-          >
-            {formatDate(date, 'HH:mm')}
+          <time class="block mt-2" datetime="19:00" itemprop="startDate">
+            19:00
           </time>
         )
       }
