@@ -1,18 +1,18 @@
 ---
-import { isNotNil, isNil } from 'ramda';
+import { isNil, isNotNil } from 'ramda';
 
 import Button from '@/components/Button.astro';
 import Sponsors from '@/components/Sponsors.astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { Event } from '@/types';
 import { t } from '@/locales';
-import { getEvents, getLangName } from '@/utils';
+import { Event } from '@/types';
+import { formatDate, getEvents, getLangName } from '@/utils';
 
 export async function getStaticPaths() {
   const events: Event[] = await getEvents();
   return events
-    .filter((i) => isNotNil(i.slug))
-    .map((event) => ({
+    .filter(i => isNotNil(i.slug))
+    .map(event => ({
       params: { slug: event.slug },
       props: { event },
     }));
@@ -67,70 +67,100 @@ const { event } = Astro.props;
       )
     }
     <p class="mt-12" set:html={event.seoBody.replace(/\n/gm, '<br /><br />')} />
-    <div class="mt-8 space-y-2">
+    <table class="mt-8 space-y-2 text-left table-auto">
       {
         isNotNil(event.speakerName) && (
-          <div
+          <tr
             itemscope
             itemprop="performer"
             itemtype="https://schema.org/Person"
-            class="flex items-baseline space-x-4 link"
+            class="link"
           >
-            <h3 class="font-bold">{t('event.speaker')}</h3>
-            {isNotNil(event.speakerName) && isNil(event.speakerLink) && (
-              <span set:html={event.speakerName} itemprop="name" />
-            )}
-            {isNotNil(event.speakerName) && isNotNil(event.speakerLink) && (
-              <a
-                href={event.speakerLink}
-                target="_blank"
-                itemprop="name"
-                rel="noopener noreferrer"
-                set:html={event.speakerName}
-              />
-            )}
-            {isNotNil(event.speakerJob) && (
-              <span
-                set:html={event.speakerJob}
-                itemprop="jobTitle"
-                class="mt-1"
-              />
-            )}
-          </div>
+            <th class="pr-4 font-bold align-top">{t('event.speaker')}
+            </th>
+            <td>
+              {isNotNil(event.speakerName) && isNil(event.speakerLink) && (
+                <span set:html={event.speakerName} itemprop="name" />
+              )}
+              {isNotNil(event.speakerName) && isNotNil(event.speakerLink) && (
+                // eslint-disable-next-line jsx-a11y/anchor-has-content
+                <a
+                  href={event.speakerLink}
+                  target="_blank"
+                  itemprop="name"
+                  rel="noopener noreferrer"
+                  set:html={event.speakerName}
+                /><br />
+              )}
+              {isNotNil(event.speakerJob) && (
+                <span
+                  set:html={event.speakerJob}
+                  itemprop="jobTitle"
+                  class="mt-1"
+                />
+              )}
+            </td>
+          </tr>
         )
       }
       {
         isNotNil(event.language) && (
-          <div itemprop="inLanguage" class="flex items-baseline space-x-4">
-            <h3 class="font-bold">{t('event.lang')}</h3>
-            <p>
+          <tr itemprop="inLanguage">
+            <th class="pr-4 font-bold align-top">{t('event.lang')}</th>
+            <td>
               {t('event.be_held')}
               {getLangName(event.language)}
-            </p>
-          </div>
+            </>
+          </tr>
         )
       }
       {
         isNotNil(event.types) && (
-          <div itemprop="inLanguage" class="flex items-baseline space-x-4">
-            <h3 class="font-bold">{t('event.who')}</h3>
-            <p>
-              {event.types?.map((type) => (
+          <tr>
+            <th class="pr-4 font-bold align-top">{t('event.who')}</th>
+            <td>
+              {event.types?.map(type => (
                 <span>{t(`homepage.events.types.${type}`)}</span>
               ))}
-            </p>
-          </div>
+            </td>
+          </tr>
         )
       }
       {
         isNotNil(event.location) && (
-          <div itemprop="inLanguage" class="flex items-baseline space-x-4">
-            <h3 class="font-bold">{t('event.where')}</h3>
-            <p itemprop="location" set:html={event.location} />
-          </div>
+          <tr itemprop="location">
+            <th class="pr-4 font-bold align-top">{t('event.where')}</th>
+            <td itemprop="location" set:html={event.location} />
+          </tr>
         )
       }
-    </div>
+      {
+        isNotNil(event.date) && (
+          <tr itemprop="inLanguage">
+            <th class="pr-4 font-bold align-top">{t('event.when')}</th>
+            <td>
+              {
+                isNotNil(event.date) && (
+                  <time
+                    datetime={formatDate(event.date, 'yyyy-MM-dd')}
+                    itemprop="startDate"
+                  >
+                    {formatDate(event.date, 'd MMMM yyyy')}
+                  </time>
+                )
+              }
+              {
+                isNotNil(event.date) && (
+                  <time datetime="19:00" itemprop="startDate">
+                    - 19:00
+                  </time>
+                )
+              }
+            </td>
+          </tr>
+        )
+      }
+    </table>
     <p class="mt-8">{t('event.youtube')}</p>
     <p
       class="mt-8"
