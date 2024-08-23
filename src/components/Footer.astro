@@ -6,54 +6,7 @@ import { formatDate } from '@/utils';
 
 <footer class="px-4 mx-auto py-9 md:pt-24 max-w-7xl">
   <div class="grid-cols-12 gap-6 lg:grid">
-    <div class="col-span-6">
-      <h2 class="text-lg font-bold md:text-xl lg:text-2xl">
-        {t('footer.newsletter.title')}
-      </h2>
-      <p class="mt-4 md:mt-7">{t('footer.newsletter.info')}</p>
-        <!-- action="http://localhost:3000" -->
-      <form
-      action="https://webmardi.us3.list-manage.com/subscribe/post-json?u=7d8f67d1605a1d4858b9a8c32&amp;id=27d71f62b4&amp;f_id=003e49e2f0"
-        method="post"
-        id="newsletter-form"
-        name="mc-embedded-subscribe-form"
-        target="_blank"
-        novalidate
-        class="w-full mt-6 space-y-4 sm:flex lg:mt-16 sm:space-y-0"
-      >
-        <label for="email" class="sr-only">
-          {t('footer.newsletter.email')}
-        </label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          autocomplete="email"
-          required
-          class="w-full px-4 py-2 mr-5 text-sm md:text-base placeholder-blue border-blue focus:ring-blue-dark focus:border-blue-dark"
-          placeholder={t('footer.newsletter.email')}
-        />
-        <div class="flex-shrink-0">
-          <button
-            type="submit"
-            class="inline-block px-4 py-2 font-bold text-white transition-colors border whitespace-nowrap border-blue md:hover:border-cyan md:hover:bg-cyan focus:bg-cyan bg-blue focus:text-blue-dark md:hover:text-blue"
-          >
-            {t('footer.newsletter.subscribe')}
-          </button>
-        </div>
-        <div style="position: absolute; left: -5000px;" aria-hidden="true">
-          <input type="text" name="name" tabindex="-1" value="" />
-        </div>
-      </form>
-      <p id="form-success" class="hidden mt-8">
-        {t('footer.newsletter.success')}
-      </p>
-      <p id="form-error" class="hidden text-[#A52525] mt-8">
-        {t('footer.newsletter.error')}
-      </p>
-    </div>
-
-    <div class="flex flex-col col-span-5 col-start-8 mt-12 lg:mt-0">
+    <div class="flex flex-col mt-12 col-span-5 lg:mt-0">
       <h2 class="text-lg font-bold md:text-xl lg:text-2xl">
         {t('footer.speaker.title')}
       </h2>
@@ -99,46 +52,3 @@ import { formatDate } from '@/utils';
     <p>Webmardi © {formatDate(new Date(), 'yyyy')}</p>
   </address>
 </footer>
-
-<script>
-  import { isNotNil, isEmpty } from 'ramda';
-  import queryString from 'query-string';
-  import jsonp from "jsonp";
-
-  const newsletterForm = document.getElementById(
-    'newsletter-form'
-  ) as HTMLFormElement;
-
-  if (isNotNil(newsletterForm)) {
-    newsletterForm.addEventListener('submit', async event => {
-      event.preventDefault();
-      const formData = new FormData(newsletterForm);
-      const { email, name } = Object.fromEntries(formData.entries());
-
-      if (isEmpty(name) && !isEmpty(email)) {
-        const params = queryString.stringify({ EMAIL: email, 'b_7d8f67d1605a1d4858b9a8c32_27d71f62b4': '' });
-        const path = newsletterForm.action + "&" + params;
-        jsonp(
-          path,
-          {
-            param: "c"
-          },
-          (err, data) => {
-            if (err) {
-              newsletterForm.classList.add('!hidden');
-              document.getElementById('form-error')?.classList.remove('hidden');
-            } else if (data.result !== "success") {
-              newsletterForm.classList.add('!hidden');
-              document.getElementById('form-error')?.classList.remove('hidden');
-            } else {
-              console.log(data);
-              newsletterForm.reset();
-              newsletterForm.classList.add('!hidden');
-              document.getElementById('form-success')?.classList.remove('hidden');
-            }
-          }
-        )
-      }
-    });
-  }
-</script>

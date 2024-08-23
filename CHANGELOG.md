@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Improve event details - #119
 
+### Removed
+- Remove newsletter form - #122
+
 ## [2.0.4] - 2024-06-28
 ### Changed
 - Update dependencies
