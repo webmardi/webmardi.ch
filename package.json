@@ -1,7 +1,7 @@
 {
   "name": "webmardi.ch",
   "type": "module",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "scripts": {
     "icons:build": "svg-sprite -s --symbol-inline --symbol-dest public --symbol-sprite icons.svg src/assets/icons/*.svg",
     "dev": "astro dev",
