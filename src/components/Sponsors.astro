@@ -1,6 +1,6 @@
 ---
-import { t } from '@/locales';
 import Button from '@/components/Button.astro';
+import { t } from '@/locales';
 ---
 
 <header class="text-white bg-blue">
@@ -11,12 +11,12 @@ import Button from '@/components/Button.astro';
       </h2>
       <p class="mt-6">{t('homepage.sponsors.content')}</p>
     </div>
-    <div class="mt-6 md:mt-16 grid md:grid-cols-3 gap-6">
+    <div class="mt-6 grid gap-6 md:mt-16 md:grid-cols-4">
       <a
         href="https://liip.ch/"
         target="_blank"
         rel="noopener"
-        class="flex items-center justify-center h-40 lg:h-60 bg-blue-dark transition-colors md:hover:bg-blue-light"
+        class="relative flex items-center justify-center h-40 transition-colors lg:h-60 bg-blue-dark md:hover:bg-blue-light"
       >
         <img
           src="/vectors/liip.svg"
@@ -25,12 +25,16 @@ import Button from '@/components/Button.astro';
           width="147"
           height="54"
         />
+        <span
+          class="absolute top-0 left-0 inline-block m-4 text-sm uppercase px-1.5 py-0.5 bg-cyan text-blue-dark"
+          >Main</span
+        >
       </a>
       <a
         href="https://hidora.io/"
         target="_blank"
         rel="noopener"
-        class="flex items-center justify-center h-40 lg:h-60 bg-blue-dark transition-colors md:hover:bg-blue-light"
+        class="relative flex items-center justify-center h-40 transition-colors lg:h-60 bg-blue-dark md:hover:bg-blue-light"
       >
         <img
           src="/vectors/hidora.svg"
@@ -39,12 +43,16 @@ import Button from '@/components/Button.astro';
           width="248"
           height="58"
         />
+        <span
+          class="absolute top-0 left-0 inline-block m-4 text-sm uppercase px-1.5 py-0.5 bg-cyan text-blue-dark"
+          >Main</span
+        >
       </a>
       <a
         href="https://superhuit.ch/"
         target="_blank"
         rel="noopener"
-        class="flex items-center justify-center h-40 px-10 lg:h-60 bg-blue-dark transition-colors md:hover:bg-blue-light"
+        class="relative flex items-center justify-center h-40 px-10 transition-colors lg:h-60 bg-blue-dark md:hover:bg-blue-light"
       >
         <img
           src="/vectors/superhuit.svg"
@@ -53,12 +61,16 @@ import Button from '@/components/Button.astro';
           width="147"
           height="54"
         />
+        <span
+          class="absolute top-0 left-0 inline-block m-4 text-sm uppercase px-1.5 py-0.5 bg-cyan text-blue-dark"
+          >Main</span
+        >
       </a>
       <a
         href="https://www.infomaniak.com/"
         target="_blank"
         rel="noopener"
-        class="flex items-center justify-center h-40 px-20 md:px-10 lg:h-60 bg-blue-dark transition-colors md:hover:bg-blue-light"
+        class="relative flex items-center justify-center h-40 px-20 transition-colors md:px-10 lg:h-60 bg-blue-dark md:hover:bg-blue-light"
       >
         <img
           src="/vectors/infomaniak.svg"
@@ -67,21 +79,27 @@ import Button from '@/components/Button.astro';
           width="147"
           height="54"
         />
+        <span
+          class="absolute top-0 left-0 inline-block m-4 text-sm text-white uppercase px-1.5 py-0.5 bg-blue"
+          >Supporting</span
+        >
       </a>
-      <div class="flex items-center justify-center h-40 lg:h-60 bg-blue-light">
-        <div class="text-center lg:mx-20">
-          <p>{t('homepage.sponsors.support_us')}</p>
-          <Button
-            target="_blank"
-            rel="noopener"
-            href={t('homepage.sponsors.sponsoring_packages_url')}
-            itemProp="url"
-            scheme="blue"
-            className="mt-5 text-sm"
-          >
-            {t('homepage.sponsors.sponsoring_packages')}
-          </Button>
-        </div>
+    </div>
+    <div
+      class="flex items-center justify-center h-40 mt-6 lg:h-60 bg-blue-light"
+    >
+      <div class="text-center lg:mx-20">
+        <p class="text-base md:text-xl">{t('homepage.sponsors.support_us')}</p>
+        <Button
+          target="_blank"
+          rel="noopener"
+          href={t('homepage.sponsors.sponsoring_packages_url')}
+          itemProp="url"
+          scheme="cyan"
+          className="mt-6"
+        >
+          {t('homepage.sponsors.sponsoring_packages')}
+        </Button>
       </div>
     </div>
   </div>
