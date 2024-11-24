@@ -8,6 +8,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Prepare 2025 sponsors new footer - #123
 
+## [2.0.8] - 2024-11-24
+### Changed
+- Update sponsoring factesheet - #129
+
+## [2.0.7] - 2024-11-18
+### Changed
+- Update dependencies
+
+## [2.0.6] - 2024-09-20
+### Changed
+- Update dependencies
+
 ## [2.0.5] - 2024-08-23
 ### Changed
 - Improve event details - #119
@@ -196,7 +208,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add Linkedin link
 - add GA script
 
-[Unreleased]: https://github.com/webmardi/webmardi.ch/compare/v2.0.5...HEAD
+[Unreleased]: https://github.com/webmardi/webmardi.ch/compare/v2.0.8...HEAD
+[2.0.8]: https://github.com/webmardi/webmardi.ch/compare/v2.0.7...v2.0.8
+[2.0.7]: https://github.com/webmardi/webmardi.ch/compare/v2.0.6...v2.0.7
+[2.0.6]: https://github.com/webmardi/webmardi.ch/compare/v2.0.5...v2.0.6
 [2.0.5]: https://github.com/webmardi/webmardi.ch/compare/v2.0.4...v2.0.5
 [2.0.4]: https://github.com/webmardi/webmardi.ch/compare/v2.0.3...v2.0.4
 [2.0.3]: https://github.com/webmardi/webmardi.ch/compare/v2.0.2...v2.0.3
