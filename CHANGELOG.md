@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.1.3] - 2025-03-21
+### Changed
+- Update dependencies
+
 ## [2.1.2] - 2025-02-16
 ### Added
 - Remove text from event content
@@ -218,7 +222,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add Linkedin link
 - add GA script
 
-[Unreleased]: https://github.com/webmardi/webmardi.ch/compare/v2.1.2...HEAD
+[Unreleased]: https://github.com/webmardi/webmardi.ch/compare/v2.1.3...HEAD
+[2.1.3]: https://github.com/webmardi/webmardi.ch/compare/v2.1.2...v2.1.3
 [2.1.2]: https://github.com/webmardi/webmardi.ch/compare/v2.1.1...v2.1.2
 [2.1.1]: https://github.com/webmardi/webmardi.ch/compare/v2.1.0...v2.1.1
 [2.1.0]: https://github.com/webmardi/webmardi.ch/compare/v2.0.8...v2.1.0
