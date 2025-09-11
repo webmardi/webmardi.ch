@@ -66,7 +66,7 @@ const date = isNotNil(rawDate) ? parseISO(rawDate) : '';
           </h2>
         )
       }
-      <div class="flex flex-wrap items-center gap-x-8">
+      <div class="flex flex-wrap items-center gap-x-8" x-data>
         {
           isNotNil(subscriptionLink) && (
             <div class="mt-8 lg:mt-14">
@@ -77,6 +77,7 @@ const date = isNotNil(rawDate) ? parseISO(rawDate) : '';
                 itemprop="url"
                 size="lg"
                 scheme="cyan"
+                @click.prevent="gtag('event', 'click_register');setTimeout(() => {window.open($event.target.href, '_blank');}, 50);"
               >
                 {t('hero.register')}
               </Button>
@@ -95,6 +96,7 @@ const date = isNotNil(rawDate) ? parseISO(rawDate) : '';
                 size="lg"
                 scheme="outline"
                 iconRight="youtube"
+                @click.prevent="gtag('event', 'click_live');setTimeout(() => {window.open($event.target.href, '_blank');}, 50);"
               >
                 {t('hero.live')}
               </Button>
