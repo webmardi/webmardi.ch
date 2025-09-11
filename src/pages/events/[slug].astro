@@ -35,7 +35,7 @@ const { event } = Astro.props;
     </h1>
     {
       (isNotNil(event.subscriptionLink) || isNotNil(event.youtubeLink)) && (
-        <div class="flex flex-wrap items-center mt-12 gap-x-8 gap-y-8">
+        <div class="flex flex-wrap items-center mt-12 gap-x-8 gap-y-8" x-data>
           {isNotNil(event.subscriptionLink) && (
             <Button
               as="a"
@@ -45,6 +45,7 @@ const { event } = Astro.props;
               itemprop="url"
               size="lg"
               scheme="cyan"
+              @click.prevent="gtag('event', 'click_register');setTimeout(() => {window.open($event.target.href, '_blank');}, 50);"
             >
               {t('hero.register')}
             </Button>
@@ -59,6 +60,7 @@ const { event } = Astro.props;
               size="lg"
               scheme="outline"
               iconRight="youtube"
+              @click.prevent="gtag('event', 'click_live');setTimeout(() => {window.open($event.target.href, '_blank');}, 50);"
             >
               {t('hero.live')}
             </Button>
