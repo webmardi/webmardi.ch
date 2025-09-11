@@ -121,6 +121,7 @@ const { event }: Props = Astro.props;
   }
   <div
     class="flex flex-wrap items-center gap-1 sm:justify-end sm:col-span-4 lg:col-span-2"
+    x-data
   >
     {
       isNotNil(event.youtubeLink) && !isEmpty(event.youtubeLink) && (
@@ -132,6 +133,7 @@ const { event }: Props = Astro.props;
           itemprop="url"
           scheme="outline"
           iconRight="youtube"
+          @click.prevent="gtag('event', 'click_live');setTimeout(() => {window.open($event.target.href, '_blank');}, 50);"
         >
           {isNotNil(event.date) &&
           isAfter(endOfDay(parseISO(event.date)), new Date())
@@ -153,6 +155,7 @@ const { event }: Props = Astro.props;
             href={event.subscriptionLink}
             itemprop="url"
             scheme="blue"
+            @click.prevent="gtag('event', 'click_register');setTimeout(() => {window.open($event.target.href, '_blank');}, 50);"
           >
             {t('homepage.events.subscribe')}
           </Button>
