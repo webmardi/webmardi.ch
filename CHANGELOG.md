@@ -6,8 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.1.6] - 2026-01-09
+### Changed
+- Update superhuit logo
+
 ## [2.1.5] - 2025-12-30
-### Added
+### Changed
 - Adapt sponsors
 - Update sponsoring package PDF
 
