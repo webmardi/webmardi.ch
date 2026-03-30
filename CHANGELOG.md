@@ -17,8 +17,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [2.1.5] - 2025-10-05
 ### Changed
-- update all dependencies
-- update all dependencies
+- update project dependencies
+- upgrade Astro to v6.1.1
+- update TypeScript to 6.0.2
+- update Astro TypeScript JSX config
 
 ## [2.1.4] - 2025-09-11
 ### Changed
