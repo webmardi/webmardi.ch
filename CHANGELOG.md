@@ -5,11 +5,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [2.2.0] - 2026-03-30
 ### Changed
 - update project dependencies
 - upgrade Astro to v6.1.1
 - update TypeScript to 6.0.2
 - update Astro TypeScript JSX config
+
+### Added
+- helo
 
 ## [2.1.6] - 2026-01-09
 ### Changed
@@ -247,8 +252,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add Linkedin link
 - add GA script
 
-[Unreleased]: https://github.com/webmardi/webmardi.ch/compare/v2.1.6...HEAD
+[Unreleased]: https://github.com/webmardi/webmardi.ch/compare/v2.2.0...HEAD
+[2.2.0]: https://github.com/webmardi/webmardi.ch/compare/v2.1.6...v2.2.0
 [2.1.6]: https://github.com/webmardi/webmardi.ch/compare/v2.1.5...v2.1.6
+[2.1.5]: https://github.com/webmardi/webmardi.ch/compare/v2.1.4...v2.1.5
 [2.1.5]: https://github.com/webmardi/webmardi.ch/compare/v2.1.4...v2.1.5
 [2.1.4]: https://github.com/webmardi/webmardi.ch/compare/v2.1.3...v2.1.4
 [2.1.3]: https://github.com/webmardi/webmardi.ch/compare/v2.1.2...v2.1.3
