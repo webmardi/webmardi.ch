@@ -5,6 +5,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Changed
+- update project dependencies
+- upgrade Astro to v6.1.1
+- update TypeScript to 6.0.2
+- update Astro TypeScript JSX config
 
 ## [2.1.6] - 2026-01-09
 ### Changed
@@ -17,10 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [2.1.5] - 2025-10-05
 ### Changed
-- update project dependencies
-- upgrade Astro to v6.1.1
-- update TypeScript to 6.0.2
-- update Astro TypeScript JSX config
+- Update all dependencies
 
 ## [2.1.4] - 2025-09-11
 ### Changed
