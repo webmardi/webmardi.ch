@@ -14,18 +14,16 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "types": [
-      "jest",
-    ],
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     }
   },
   "include": [
+    ".astro/types.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "**/*.astro",
+    "**/*.astro"
   ],
   "exclude": [
     "node_modules",
