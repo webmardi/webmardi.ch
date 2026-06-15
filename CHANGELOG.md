@@ -6,15 +6,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.2.1] - 2026-06-15
+### Fixed
+- fix(ci): upgrade Node.js to v22 to meet Astro's minimum requirement
+
+### Changed
+- update project dependencies
+
 ## [2.2.0] - 2026-03-30
 ### Changed
 - update project dependencies
 - upgrade Astro to v6.1.1
 - update TypeScript to 6.0.2
 - update Astro TypeScript JSX config
-
-### Added
-- helo
 
 ## [2.1.6] - 2026-01-09
 ### Changed
@@ -24,6 +28,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Adapt sponsors
 - Update sponsoring package PDF
+- Update all dependencies
 
 ## [2.1.5] - 2025-10-05
 ### Changed
@@ -252,7 +257,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add Linkedin link
 - add GA script
 
-[Unreleased]: https://github.com/webmardi/webmardi.ch/compare/v2.2.0...HEAD
+[Unreleased]: https://github.com/webmardi/webmardi.ch/compare/v2.2.1...HEAD
+[2.2.1]: https://github.com/webmardi/webmardi.ch/compare/v2.2.0...v2.2.1
 [2.2.0]: https://github.com/webmardi/webmardi.ch/compare/v2.1.6...v2.2.0
 [2.1.6]: https://github.com/webmardi/webmardi.ch/compare/v2.1.5...v2.1.6
 [2.1.5]: https://github.com/webmardi/webmardi.ch/compare/v2.1.4...v2.1.5
