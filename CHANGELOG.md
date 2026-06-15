@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - fix(ci): upgrade Node.js to v22 to meet Astro's minimum requirement
 
+### Changed
+- update project dependencies
+
 ## [2.2.0] - 2026-03-30
 ### Changed
 - update project dependencies
@@ -15,12 +18,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - update TypeScript to 6.0.2
 - update Astro TypeScript JSX config
 
-### Added
-- helo
-
 ## [2.1.6] - 2026-01-09
 ### Changed
 - Update superhuit logo
+
+## [2.1.5] - 2025-10-05
+### Changed
+- Update all dependencies
 
 ## [2.1.5] - 2025-12-30
 ### Changed
